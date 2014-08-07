@@ -1,6 +1,27 @@
-#!/usr/bin/env python
+#!/usr/bin/env python\
+# encoding: utf-8
 
-import re, os, time, datetime, thread, sys # standard Python modules # base64,
+######################
+#### i18n relates ####
+import os
+import gettext
+
+urls = (
+    '/.*', 'hello',
+    )
+
+# File location directory.
+curdir = os.path.abspath(os.path.dirname(__file__))
+
+# i18n directory.
+localedir = curdir + '/i18n'
+
+gettext.install('ospi_messages', localedir, unicode=True)   
+gettext.translation('ospi_messages', localedir, languages=['en_US']).install(True) 
+
+##################
+
+import re, time, datetime, thread, sys # standard Python modules # base64,
 from calendar import timegm
 try:
     import json
