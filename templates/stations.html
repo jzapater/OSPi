@@ -15,7 +15,7 @@ $code:
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi Configure Stations ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi Configure Stations') ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<style type="text/css">
@@ -115,27 +115,28 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home" title="Home">Home</button>
-					<button id="bPrograms" class="programs" title="Define Programs">Programs</button>
-					<button id="bRunOnce" class="start" title="Define Run Once Program">Run Once</button>
-					<button id="bLog" class="log" title="View Log">Log</button>
-					<button id="bOptions" class="options" title="Options">Options</button>
-					<button id="bStations" class="stations here" title="Configure Stations">Stations</button>
+					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
+					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
+					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
+					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
+					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
+					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
-						<button id="bLogout" class="logout" title="Logout">Logout</button>
+						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 				
 				<div id="stations">
-					<div class="title">Configure Stations</div>
+					<div class="title">$_('Configure Stations')</div>
 					<form id="sf" name="sf" action="cs" method="get">
 						<table class="stationList">
 							<tr>
-								<th class="stationNumber">Station</th>
-								<th class="stationName">Name</th>
-								<th class="stationShow">Connected?</th>
-								<th class="stationIgnore">Ignore Rain?</th>
+								<th class="stationNumber">$_('Station') </th>
+								<th class="stationName">$_('Name')</th>
+								<th class="stationShow"> $_('Connected?') </th>
+								<th class="stationIgnore">$_('Ignore Rain?')</th>
 								$if gv.sd['mas'] > 0:
-									<th class="stationMaster">Activate Master?</th>
+									<th class="stationMaster">$_('Activate Master?')</th>
 							</tr>
 							$for bid in range(0,gv.sd['nbrd']):
 								$for s in range(0,8):
@@ -146,7 +147,7 @@ $code:
 											<input type="text" size="${gv.sd['snlen']}" maxlength="${gv.sd['snlen']}" value="${snames[sid]}" name="s${sid}" id="n${sid}">
 										</td>
 										$if sid == gv.sd['mas'] - 1:
-											<td class="stationMaster" colspan="3">(Master valve)</td>
+											<td class="stationMaster" colspan="3">($_('Master valve'))</td>
 										$else:
 											<td class="stationShow">
 												<input type="checkbox" ${"checked" if gv.sd['show'][bid]&(1<<s) else ""} id="show${sid}">
@@ -171,16 +172,16 @@ $code:
 				</div>
 				
 				<div id="controls">
-					<button id="cSubmit" class="submit">Submit Changes</button>
-					<button id="cResetNames" class="refresh">Reset Names</button>
-					<button id="cCancel" class="cancel danger">Cancel</button>
+					<button id="cSubmit" class="submit">$_('Submit Changes')</button>
+					<button id="cResetNames" class="refresh">$_('Reset Names')</button>
+					<button id="cCancel" class="cancel danger">$_('Cancel')</button>
 				</div>
 			</div>
 		</div>
 		
 		<div class="footer">
-			<p>CPU Temp: <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p>$_('CPU Temp:') <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>

@@ -29,7 +29,7 @@ $code:
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi Log${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi Log')${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<style>
@@ -78,32 +78,33 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home" title="Home">Home</button>
-					<button id="bPrograms" class="programs" title="Define Programs">Programs</button>
-					<button id="bRunOnce" class="start" title="Define Run Once Program">Run Once</button>
-					<button id="bLog" class="log here" title="View Log">Log</button>
-					<button id="bOptions" class="options" title="Options">Options</button>
-					<button id="bStations" class="stations" title="Configure Stations">Stations</button>
+					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
+					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
+					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
+					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
+					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
+					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
-						<button id="bLogout" class="logout" title="Logout">Logout</button>
+						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 				
 				<div id="options">
-					<div class="title">Log $log_state</div>
+					<div class="title">$_('Log') $log_state</div>
 					<form method="get" action="cl" name="df" id="df"></form>
 				</div>
 				
 				<div id="log">
-					<p>Total number of records: ${len(records)} (${"no" if gv.sd['lr']==0 else gv.sd['lr']} limit)</p>
-					<p>Download log as <a href="/wl">csv</a>.</p>
+					<p>$_('Total number of records'): ${len(records)} (${_("no") if gv.sd['lr']==0 else gv.sd['lr']} $_('limit'))</p>
+					<p>$_('Download log as') <a href="/wl">csv</a>.</p>
 					
 					<table class="logList">
 						<tr class="log_rec">
-							<th>Date</th>
-							<th>Start Time</th>
-							<th>Station</th>
-							<th>Duration</th>
-							<th>Program</th>
+							<th>$_('Date')</th>
+							<th>$_('Start Time')</th>
+							<th>$_('Station')</th>
+							<th>$_('Duration')</th>
+							<th>$_('Program')</th>
 						</tr>
 						$ odd = 1
 						$for r in records:
@@ -121,16 +122,16 @@ $code:
 				</div>
 				
 				<div id="controls">
-					<button id="nRefresh" class="refresh">Refresh</button>
-					<button id="nDeleteAll" class="delete danger">Clear Log</button>
+					<button id="nRefresh" class="refresh">$_('Refresh')</button>
+					<button id="nDeleteAll" class="delete danger">$_('Clear Log')</button>
 				</div>
 				
 			</div>
 		</div>
 		
 		<div class="footer">
-			<p>CPU Temp: <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p>$_('CPU Temp'): <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>

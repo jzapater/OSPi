@@ -21,20 +21,20 @@ $code:
 			days = days&0x7f
 			dse = int(gv.now/86400) # days since epoc
 			daysRemaining = ((days + dayInterval)-(dse % dayInterval)) % dayInterval
-			output += "Every " + str(dayInterval) + " days"
+			output += _("Every") + " " + str(dayInterval) + " " + _('days')
 			if daysRemaining:
-				output += ", starting in " + str(daysRemaining) + " days."
+				output += ", _(starting in) " + str(daysRemaining) + " " + _('days') + "."
 		else: # this is a weekly program 
 			if days == 127:
-				output += "Every Weekday"
+				output += _("Every Weekday")
 			else:
 				for d in range(0,7):
 					if days & (1<<d):
-						output += " " + ["Mon","Tue","Wed","Thur","Fri","Sat","Sun"][d]
+						output += " " + [_("Mon"),_("Tue"),_("Wed"),_("Thur"),_("Fri"),_("Sat"),_("Sun")][d]
 		if (days&0x80) and (dayInterval==0):
-			output += " (Even days only)"
+			output += _(' (Even days only)')
 		if (days&0x80) and (dayInterval==1):
-			output += " (Odd days only)"
+			output += _(' (Odd days only)')
 		return output
 
 	def formatTime(t):
@@ -54,7 +54,7 @@ $code:
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi Programs ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi Programs') ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<style type="text/css">
@@ -132,14 +132,15 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home" title="Home">Home</button>
-					<button id="bPrograms" class="programs here" title="Define Programs">Programs</button>
-					<button id="bRunOnce" class="start" title="Define Run Once Program">Run Once</button>
-					<button id="bLog" class="log" title="View Log">Log</button>
-					<button id="bOptions" class="options" title="Options">Options</button>
-					<button id="bStations" class="stations" title="Configure Stations">Stations</button>
+					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
+					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
+					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
+					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
+					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
+					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
-						<button id="bLogout" class="logout" title="Logout">Logout</button>
+						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 
 				<form name="df" id="df" action="dp" method="get">
@@ -153,8 +154,8 @@ $code:
 				</form>
 				
 				<div id="controls">
-					<button id="nAdd" class="add" data="-1">Add a New Program</button>
-					<button id="nDelAll" class="deleteAll danger" data="-1">Delete All</button>
+					<button id="nAdd" class="add" data="-1">$_('Add a New Program')</button>
+					<button id="nDelAll" class="deleteAll danger" data="-1">$_('Delete All')</button>
 				</div>
 				
 				<div id="programs">
@@ -180,17 +181,17 @@ $code:
 					 					<span class="stationName val">${snames[sid]}</span>
 					 					$ stationsOn = stationsOn + 1
 		 					</p>
-		 					<p>Starting: <span class="val">${formatTime(twoDigits(start/60) + ":" + twoDigits(start%60))}</span>
-							for <span class="val">${(duration/60>>0)}</span> mins<span class="val">${"" if (duration%60) == 0 else (" " + str(duration%60) + " secs")}</span></p>
+		 					<p>$_('Starting'): <span class="val">${formatTime(twoDigits(start/60) + ":" + twoDigits(start%60))}</span>
+							$_('for') <span class="val">${(duration/60>>0)}</span> mins<span class="val">${"" if (duration%60) == 0 else (" " + str(duration%60) + " secs")}</span></p>
 							$ recurring = start + duration/60*stationsOn < end
 		 					$if recurring:
-		 						<p>Recurring every</b> <span class="val">${(interval/60>>0)}</span> hrs <span class="val">${(interval%60)}</span> mins
-		 						until <span class="val">${formatTime(twoDigits(end/60) + ":" + twoDigits(end%60))}</span></p>
+		 						<p>$_('Recurring every')</b> <span class="val">${(interval/60>>0)}</span> hrs <span class="val">${(interval%60)}</span> mins
+		 						$_('until') <span class="val">${formatTime(twoDigits(end/60) + ":" + twoDigits(end%60))}</span></p>
 	
 							<p>
-		 						<button class="cRunNow" data="${pid}">Run Now</button>
-		 						<button class="cModify" data="${pid}">Edit</button>
-								<button class="cDelete danger" data="${pid}">Delete</button>
+		 						<button class="cRunNow" data="${pid}">$_('Run Now')</button>
+		 						<button class="cModify" data="${pid}">$_('Edit')</button>
+								<button class="cDelete danger" data="${pid}">$_('Delete')</button>
 							</p>
 						</div>
 				</div>
@@ -199,8 +200,8 @@ $code:
 		</div>
 		
 		<div class="footer">
-			<p>CPU Temp: <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p>$_('CPU Temp:') <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>

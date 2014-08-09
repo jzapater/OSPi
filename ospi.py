@@ -5,6 +5,8 @@
 #### i18n relates ####
 import os
 import gettext
+import web
+
 
 urls = (
     '/.*', 'hello',
@@ -17,7 +19,10 @@ curdir = os.path.abspath(os.path.dirname(__file__))
 localedir = curdir + '/i18n'
 
 gettext.install('ospi_messages', localedir, unicode=True)   
-gettext.translation('ospi_messages', localedir, languages=['en_US']).install(True) 
+try:
+    gettext.translation('ospi_messages', localedir, languages=['en_US']).install(True)
+except IOError:
+    pass  
 
 ##################
 
@@ -31,7 +36,6 @@ except ImportError:
     print "Error: json module not found"
     sys.exit()
 
-import web # the Web.py module. See webpy.org (Enables the Python OpenSprinkler web interface)
 web.config.debug = False # Improves page load speed
 from web import form
 import gv # 'global vars' An empty module, used for storing vars (as attributes), that need to be 'global' across threads and between functions and classes.
@@ -45,7 +49,7 @@ from hashlib import sha1
 #### Revision information ####
 gv.ver = 203
 gv.rev = 'XXX'
-gv.rev_date = '13/July/2014'
+gv.rev_date = '8/August/2014'
 
 #!!! Note: This add-on feature is now deprecated. Code is left in place for backward compatibility.
 ################################################################
@@ -119,14 +123,14 @@ def log_run():
     """add run data to csv file - most recent first."""
     if gv.sd['lg']:
         if gv.lrun[1] == 98:
-            pgr = 'Run-once'
+            pgr = _('Run-once')
         elif gv.lrun[1] == 99:
-            pgr = 'Manual'
+            pgr = _('Manual')
         else:
             pgr = str(gv.lrun[1])
 
         start = time.gmtime(gv.now - gv.lrun[2])
-        logline = '{"program":"' + pgr + '","station":' + str(gv.lrun[0]) + ',"duration":"' + timestr(gv.lrun[2]) + '","start":"' + time.strftime('%H:%M:%S","date":"%Y-%m-%d"', start) + '}\n'
+        logline = '{_("program"):"' + pgr + '",_("station"):' + str(gv.lrun[0]) + ',_("duration"):"' + timestr(gv.lrun[2]) + '",_("start"):"' + time.strftime('%H:%M:%S",_("date"):"%Y-%m-%d"', start) + '}\n'
         log = read_log()
         log.insert(0, logline)
         f = open('./data/log.json', 'w')
@@ -226,7 +230,7 @@ def stop_stations():
 
 def timing_loop():
     """ ***** Main timing algorithm. Runs in a separate thread.***** """
-    print 'Starting timing loop \n'
+    print _('Starting timing loop') + '\n'
     last_min = 0
     while True: # infinite loop
         lt = time.localtime()
@@ -502,7 +506,7 @@ def verifyLogin():
 
 signin_form = form.Form(form.Password('password',
                                       description='Password:'),
-                        validators = [form.Validator("Incorrect password, please try again",
+                        validators = [form.Validator(_("Incorrect password, please try again"),
                                       lambda x: checkPassword(x.password, gv.sd['salt'], gv.sd['password'])) ])
 
 class login:
@@ -510,12 +514,12 @@ class login:
     def GET(self):
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={'gv': gv, 'str': str, 'user': web.config._session.user})
+        render = web.template.render('templates', globals={'gv': gv, 'str': str, 'user': web.config._session.user, 'json': json, '_':_})
         return render.login(signin_form())
 
     def POST(self):
         my_signin = signin_form()
-        render = web.template.render('templates', globals={'gv': gv, 'str': str, 'user': web.config._session.user})
+        render = web.template.render('templates', globals={'gv': gv, 'str': str, 'user': web.config._session.user, 'json': json, '_':_})
         if not my_signin.validates():
             return render.login(my_signin)
         else:
@@ -535,7 +539,7 @@ class home:
         checkLogin()
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'user': web.config._session.user })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'user': web.config._session.user, 'json': json, '_':_})
         return render.home()
 
 class change_values:
@@ -580,7 +584,7 @@ class view_options:
             errorCode = qdict['errorCode']
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data})
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_ })
         return render.options(errorCode)
 
 class change_options:
@@ -718,7 +722,7 @@ class view_stations:
         checkLogin()
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_})
         return render.stations()
 
 class change_stations:
@@ -767,7 +771,7 @@ class get_station:
             status += str(gv.srvals[int(sn)-1])
             return status
         else:
-            return 'Station '+sn+' not found.'
+            return _('Station') + ' '+sn+' '+ _('not found.')
 
 class set_station:
     """turn a station (valve/zone) on=1 or off=0 in manual mode."""
@@ -799,7 +803,7 @@ class view_runonce:
         checkLogin()
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_ })
         return render.runonce()
 
 class change_runonce:
@@ -833,7 +837,7 @@ class view_programs:
         checkLogin()
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_})
         return render.programs()
 
 
@@ -854,7 +858,7 @@ class modify_program:
 
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_})
         return render.modify(pid, prog)
 
 class change_program:
@@ -914,7 +918,7 @@ class view_log:
 
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_ })
         return render.log(records)
 
 class clear_log:
@@ -954,11 +958,11 @@ class show_revision:
     def GET(self):
         checkLogin()
         revpg = '<!DOCTYPE html>\n'
-        revpg += 'Python Interval Program for OpenSprinkler Pi<br/><br/>\n'
-        revpg += 'Compatable with OpenSprinkler firmware 1.8.3.<br/><br/>\n'
-        revpg += 'Includes plugin archetecture\n'
-        revpg += 'ospi.py revision: '+str(gv.rev) +'<br/><br/>\n'
-        revpg += 'updated ' + gv.rev_date +'\n'
+        revpg += _('Python Interval Program for OpenSprinkler Pi') + '<br/><br/>\n'
+        revpg += _('Compatable with OpenSprinkler firmware 1.8.3.') + '<br/><br/>\n'
+        revpg += _('Includes plugin archetecture') + '\n'
+        revpg += _('ospi.py revision') + ': '+str(gv.rev) +'<br/><br/>\n'
+        revpg += _('updated') + ' ' + gv.rev_date +'\n'
         return revpg
 
 class toggle_temp:
@@ -988,15 +992,15 @@ class api_status:
                     status = {'station' : sid, 'status' : 'disabled', 'reason' : '', 'master' : 0, 'programName' : '', 'remaining' : 0}
                     if gv.sd['en'] == 1:
                         if sbit:
-                            status['status'] = 'on'
+                            status['status'] = _('on')
                         if not irbit:
                             if gv.sd['rd'] != 0:
-                                status['reason'] = 'rain_delay'
+                                status['reason'] = _('rain_delay')
                             if gv.sd['urs'] != 0 and gv.sd['rs'] != 0:
-                                status['reason'] = 'rain_sensed'
+                                status['reason'] = _('rain_sensed')
                         if sn == gv.sd['mas']:
                             status['master'] = 1
-                            status['reason'] = 'master'
+                            status['reason'] = _('master')
                         else:
                             rem = gv.ps[sid][1]
                             if rem > 65536:
@@ -1005,25 +1009,25 @@ class api_status:
                             id = gv.ps[sid][0]
                             pname = 'P' + str(id)
                             if (id == 255 or id == 99):
-                                pname = 'Manual Mode'
+                                pname = _('Manual Mode')
                             if (id == 254 or id == 98):
-                                pname = 'Run-once Program'
+                                pname = _('Run-once Program')
 
                             if sbit:
-                                status['status'] = 'on'
-                                status['reason'] = 'program'
+                                status['status'] = _('on')
+                                status['reason'] = _('program')
                                 status['programName'] = pname
                                 status['remaining'] = rem
                             else:
                                 if gv.ps[sid][0] == 0:
-                                    status['status'] = 'off'
+                                    status['status'] = _('off')
                                 else:
-                                    status['status'] = 'waiting'
-                                    status['reason'] = 'program'
+                                    status['status'] = _('waiting')
+                                    status['reason'] = _('program')
                                     status['programName'] = pname
                                     status['remaining'] = rem
                     else:
-                        status['reason'] = 'system_off'
+                        status['reason'] = _('system_off')
                     statuslist.append(status)
         web.header('Content-Type', 'application/json')
         return json.dumps(statuslist)
@@ -1061,7 +1065,7 @@ class water_log:
     def GET(self):
         verifyLogin()
         records = read_log()
-        data = "Date, Start Time, Zone, Duration, Program\n"
+        data = _("Date, Start Time, Zone, Duration, Program") + "\n"
         for r in records:
             event = json.loads(r)
             data += event["date"] + ", " + event["start"] + ", " + str(event["station"]) + ", " + event["duration"] + ", " + event["program"] + "\n"

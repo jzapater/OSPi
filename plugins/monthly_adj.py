@@ -18,6 +18,7 @@ try:
     sched.start() # Start the scheduler
 except NameError:
     pass
+    
 
 def set_wl():
     """Adjust irrigation time by percent based on historical climate data.""" 
@@ -32,7 +33,7 @@ def set_wl():
 class monthly_percent:
     """Load an html page for entering monthly irrigation time adjustments"""
     def __init__(self):
-        self.render = web.template.render('templates/')
+        self.render = web.template.render('templates/', globals = {'json':json, '_':_})
 
     def GET(self):
         f = open('./data/levels.json', 'r') # Read the monthly percentages from file

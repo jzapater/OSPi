@@ -15,18 +15,18 @@ $code:
 		return pname
 
 
-<!-- 
-  2013-10-06: jonathanmarsh
+	<!-- 
+  	2013-10-06: jonathanmarsh
 	- Converted to web.py template, retaining 99% of older look and feel
 	- Moved inline styling to stylesheet
 	- Moved inline behaviors to jQuery.
 	Note that the normal jQuery use of the dollar sign conflicts with the templating syntax - used the longer jQuery() throughout.
- -->
+ 	-->
 <html>
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi')${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<style type="text/css">
@@ -81,17 +81,17 @@ $code:
 		function formatLogline(log) {
 			var lrsid = lrun[0], lrpid = lrun[1], lrdur = lrun[2], lret = lrun[3];
 			if (lrpid == 0) {
-				return "n/a";
+				return $:{json.dumps(_('n/a'), ensure_ascii=False)};
 			}
 			var pname = "P" + lrpid;
 			if (lrpid == 255 || lrpid == 99) {
-				pname = "Manual Mode";
+				pname = $:{json.dumps(_('Manual Mode'), ensure_ascii=False)};
 			}
 			if (lrpid == 254 || lrpid == 98) {
-				pname = "Run Once Program";
+				pname = $:{json.dumps(_('Run Once Program'), ensure_ascii=False)};
 			}
 			var runDate = (new Date(lret*1000)).toString(); // + timezoneSuffix; //dk
-			return snames[lrsid] + " ran " + pname + " for " + (lrdur/60>>0) + "m" + (lrdur%60) + "s on " + runDate;
+			return snames[lrsid] + " "+$:{json.dumps(_('ran'), ensure_ascii=False)}+" " + pname + " "+$:{json.dumps(_('for'), ensure_ascii=False)}+" " + (lrdur/60>>0) + "m" + (lrdur%60) + "s "+$:{json.dumps(_('on'), ensure_ascii=False)}+" " + runDate;
 		}
 
 		function updateStatus(status) {
@@ -115,20 +115,20 @@ $code:
 					case "master" :
 						classes += " master";
 						if (station.status == "on") {
-							display = "Master On";
+							display = $:{json.dumps(_('Master On'), ensure_ascii=False)};
 						} else {
-							display = "Master Off"; 
+							display = $:{json.dumps(_('Master Off'), ensure_ascii=False)}; 
 							classes += " strike";
 						}
 						break;
 					case "rain_delay" :
-						display = "Suppressed by Rain Delay";
+						display = $:{json.dumps(_('Suppressed by Rain Delay'), ensure_ascii=False)};
 						break;
 					case "rain_sensed" :
-						display = "Suppressed by Rain Sensor";
+						display = $:{json.dumps(_('Suppressed by Rain Sensor'), ensure_ascii=False)};
 						break;
 					default:
-						display = "Off";
+						display = $:{json.dumps(_('Off'), ensure_ascii=False)};
 				}
 				jQuery("td#status" + station.station)
 					.text(display)
@@ -187,7 +187,7 @@ $code:
 				if (rd != 0) {
 					var h = 0;
 				} else {
-					var h = prompt("Enter hours to delay","0");
+					var h = prompt($:{json.dumps(_('Enter hours to delay'), ensure_ascii=False)},"0");
 				}
 				if (h != null){
 					jQuery("form[name='hf'] input[name='rd']").val(h);
@@ -199,7 +199,7 @@ $code:
 				if (wl != 100) {
 					var w = 100;
 				} else {
-					var w = prompt("Enter percentage adjustment",wl);
+					var w = prompt($:{json.dumps(_('Enter percentage adjustment'), ensure_ascii=False)},wl);
 				}
 				if (w != null){
 					jQuery("form[name='hf'] input[name='wl']").val(w);
@@ -218,7 +218,7 @@ $code:
 					var mm = (strmm == "" ? 0 : parseInt(strmm));
 					var ss = (strss == "" ? 0 : parseInt(strss));
 					if (!(mm >= 0 && ss >= 0 && ss < 60)) {
-						alert("Timer values wrong: " + strmm + ":" + strss);
+						alert($:{json.dumps(_('Timer values wrong'), ensure_ascii=False)}+": " + strmm + ":" + strss);
 						return;
 					}
 					window.location = "/sn" + (sid+1) + "=1" + "&t=" + (mm*60+ss);  // turn it off with timer
@@ -289,29 +289,29 @@ $code:
 			<div class="panel">
 
 				<div id="nav">
-					<button id="bHome" class="home here" title="Home">Home</button>
-					<button id="bPrograms" class="programs" title="Define Programs">Programs</button>
-					<button id="bRunOnce" class="start" title="Define Run Once Program">Run Once</button>
-					<button id="bPlugins" class="Plugins" title="Acces Plugins">Plugins</button>					
-					<button id="bLog" class="log" title="View Log">Log</button>
-					<button id="bOptions" class="options" title="Options">Options</button>
-					<button id="bStations" class="stations" title="Configure Stations">Stations</button>
+					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
+					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
+					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
+					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
+					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
+					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
-						<button id="bLogout" class="logout" title="Logout">Logout</button>
+						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 				
 				<div id="options">	
-					<button id="cStartStop" class="toggle ${'on' if gv.sd['en'] else 'off'}"><span class='toggleleft'>System On</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>System Off</span></button>
+					<button id="cStartStop" class="toggle ${'on' if gv.sd['en'] else 'off'}"><span class='toggleleft'>$_('System On')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('System Off')</span></button>
 					<br>
-					<button id="cWaterLevel" class="toggle choice ${'on' if gv.sd['wl']==100 else 'off'}"><span class='toggleleft'>Normal</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>${'Water Level' if gv.sd['wl']==100 else str(gv.sd['wl']) + '% Level'}</span></button>
+					<button id="cWaterLevel" class="toggle choice ${'on' if gv.sd['wl']==100 else 'off'}"><span class='toggleleft'>$_('Normal')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>${_('Water Level') if gv.sd['wl']==100 else str(gv.sd['wl']) + '% Level'}</span></button>
 					<br>
-					<button id="cRainDelay" class="toggle ${'off' if gv.sd['rd'] or (gv.sd['urs'] and gv.sd['rs']) else 'on'}"><span class='toggleleft'>Active</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Rain Delay</span></button>
+					<button id="cRainDelay" class="toggle ${'off' if gv.sd['rd'] or (gv.sd['urs'] and gv.sd['rs']) else 'on'}"><span class='toggleleft'>$_('Active')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Rain Delay')</span></button>
 					$if gv.sd['rd']:
 						$:{'<span class="countdown" id="rainDelayCountdown" data="' + str(gv.sd['rdst']*1000) + '"></span>' if gv.sd['rd'] else ''}
 					$if gv.sd['urs']:
-						<span class="rainsense">${'' if gv.sd['rs'] else 'no'} rain sensed</span>
+						<span class="rainsense">${'' if gv.sd['rs'] else _('no')} $_('rain sensed')</span>
 					<br>
-					<button id="cManual" class="toggle choice ${'off' if gv.sd['mm'] else 'on'}"><span class='toggleleft'>Auto</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Manual</span></button>
+					<button id="cManual" class="toggle choice ${'off' if gv.sd['mm'] else 'on'}"><span class='toggleleft'>$_('Auto')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Manual')</span></button>
 				</div>
 				
 				<div id="stations">
@@ -331,16 +331,16 @@ $code:
 										<td class='station_name'>${snames[sid]}</td>
 										$if sn == gv.sd['mas']:
 											$if sbit:
-												<td class="master station_on">On (Master)</td>
+												<td class="master station_on">$_('On (Master)')</td>
 											$else:
-												<td class="master station_off">Off (Master)</td>
+												<td class="master station_off">$_('Off (Master)')</td>
 										$else:
 											$ rem = gv.ps[sid][1]
 											$if rem > 65536:
 												$ rem = 0
 											<td class="station_running">
-												<button class='toggle manual narrow ${'on' if sbit else 'off'}' id='${sid}'><span class='toggleleft'>On</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Off</span></button>
-													${'in' if sbit else 'for'}
+												<button class='toggle manual narrow ${'on' if sbit else 'off'}' id='${sid}'><span class='toggleleft'>$_('On')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Off')</span></button>
+													${_('in') if sbit else _('for')}
 										  		<input type='text' id='mm${sid}' size='2' maxlength='3' value='${twodigits(rem/60)}'/>: 
 										  		<input type='text' id='ss${sid}' size='2' maxlength='2' value='${twodigits(rem%60)}'/> (mm:ss)
 										  	</td>
@@ -357,9 +357,9 @@ $code:
 									<span id="displayScheduleDate"></span>
 								</td>
 								<td colspan="16" style="text-align:right">
-									<button id="pPrev" class="execute">&lt;&lt; Prev Day</button>
-									<button id="pToday" class="execute">Today</button>
-									<button id="pNext" class="execute">Next Day &gt;&gt;</button>
+									<button id="pPrev" class="execute">&lt;&lt; $_('Prev Day')</button>
+									<button id="pToday" class="execute">$_('Today')</button>
+									<button id="pNext" class="execute">$_('Next Day') &gt;&gt;</button>
 								</td>
 							</tr>
 							<tr><td colspan="2">
@@ -397,7 +397,7 @@ $code:
 						 			$if show == 1:
 						 				<tr class="stationSchedule ${'odd' if odd else 'even'}" id='schedule${sid}' data="${sid}">
 											<td class='station_name'>${snames[sid]}</td>
-											<td id='status${sid}' class="stationStatus">loading...</td>
+											<td id='status${sid}' class="stationStatus">$_('loading...')</td>
 											<td class="scheduleTick" data="0"></td>
 											<td class="scheduleTick" data="1"></td>
 											<td class="scheduleTick" data="2"></td>
@@ -426,7 +426,7 @@ $code:
 									$ odd = 1 - odd
 							<tr>
 								<td colspan="2" style="text-align:right">
-									<button id="pStopAll" class="execute delete">Stop All Stations</button>
+									<button id="pStopAll" class="execute delete">$_('Stop All Stations')</button>
 								</td>
 								<td colspan="24" id="legend" style="text-align:center">
 									<span class='program1'>Program 1</span>
@@ -450,8 +450,8 @@ $code:
 		</div>
 		
 		<div class="footer">
-			<p>CPU Temp: <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p>$_('CPU Temp:') <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>

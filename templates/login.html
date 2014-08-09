@@ -8,7 +8,7 @@ $def with (form)
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi Log${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi Login')${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<script src="${gv.baseurl}/static/scripts/jquery-1.8.2.min.js"></script>
@@ -45,17 +45,17 @@ $def with (form)
 				$if user == 'anonymous':
     				<form name="test" method="POST"> 
 			    		$:form.render()
-			      		<button id="cSubmit" class="submit"><b>Login</b></button>
+			      		<button id="cSubmit" class="submit"><b>$_('Login')</b></button>
 			    	</form>
 			    $else:
-			    	<p>You are already logged in.  Log out to login as another user.</p>
-			    	<button id="bHome" class="home" title="Home">Home</button>
-			    	<button id="bLogout" class="logout" title="Logout">Logout</button>
+			    	<p>$_('You are already logged in.  Log out to login as another user.')</p>
+			    	<button id="bHome" class="home" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+			    	<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 			</div>
 		</div>
 		
 		<div class="footer">
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>

@@ -20,18 +20,18 @@ def weather_to_delay(run_loop=False):
     while True:
         data = get_weather_options()
         if data["auto_delay"] != "off":
-            print("Checking rain status...")
+            print(_("Checking rain status..."))
             weather = get_weather_data() if data['weather_provider'] == "yahoo" else get_wunderground_weather_data()
             delay = code_to_delay(weather["code"])
             if delay > 0:
-                print("Rain detected: " + weather["text"] + ". Adding delay of " + str(delay))
+                print(_("Rain detected: ") + weather["text"] + _(". Adding delay of ") + str(delay))
                 gv.sd['rd'] = float(delay)
                 gv.sd['rdst'] = gv.now + gv.sd['rd'] * 3600 + 1 # +1 adds a smidge just so after a round trip the display hasn't already counted down by a minute.
                 stop_onrain()
             elif delay == False:
-                print("No rain detected: " + weather["text"] + ". No action.")
+                print(_("No rain detected: ") + weather["text"] + _(". No action."))
             elif delay == 0:
-                print("Good weather detected: " + weather["text"] + ". Removing rain delay.")
+                print(_("Good weather detected: ") + weather["text"] + _(". Removing rain delay."))
                 gv.sd['rdst'] = gv.now
 
         if not run_loop:
@@ -144,7 +144,7 @@ def stop_onrain():
 class settings:
     """Load an html page for entering weather-based irrigation adjustments"""
     def __init__(self):
-        self.render = web.template.render('templates/')
+        self.render = web.template.render('templates/', globals = {'json':json, '_':_})
 
     def GET(self):
         return self.render.weather_adj(get_weather_options())

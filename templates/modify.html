@@ -52,7 +52,7 @@ $code:
 <head>
 	<meta name="viewport" content="width=640">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>OpenSprinkler Pi Modify Program ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
+	<title>$_('OpenSprinkler Pi Modify Program') ${" - "+gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</title>
 	<link href="/static/images/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="${gv.baseurl}/static/themes/${gv.sd['theme']}/base.css" rel="stylesheet" type="text/css"/>	
 	<script src="${gv.baseurl}/static/scripts/jquery-1.8.2.min.js"></script>
@@ -87,7 +87,7 @@ $code:
 				}
 			}
 			if (!(h>=0 && h<24 && m>=0 && m<60)) {
-				alert("Error: Incorrect time input " + prefix + ".");
+				alert($:{json.dumps(_('Error: Incorrect time input '), ensure_ascii=False)} + prefix + ".");
 				return -1;
 			}
 			return h*60 + m;
@@ -99,11 +99,11 @@ $code:
 			if (jQuery("button#cWeeklyInterval").hasClass("on") &&
 				jQuery(".weekday.on").length < 1) {
 				disableSubmit = true;
-				errorHint = "Please choose at least one weekday for the program to run.";
+				errorHint = $:{json.dumps(_('Please choose at least one weekday for the program to run.'), ensure_ascii=False)};
 			}
 			if (jQuery(".station.on").length < 1) {
 				disableSubmit = true;
-				errorHint = "Please choose at least one station to run in this program.";
+				errorHint = $:{json.dumps(_('Please choose at least one station to run in this program.'), ensure_ascii=False)};
 			}
 			jQuery("button#cSubmit").prop("disabled", disableSubmit);
 			jQuery("#errorHint").text(errorHint);
@@ -249,7 +249,7 @@ $code:
 					days = parseInt(jQuery("#intervalDelaySelector .intervalSelect.distance0").text());
 					
 					if (days < 0 || days >= dayInterval) {
-						alert("Error: starting in days wrong.");
+						alert($:{json.dumps(_('Error: starting in days wrong.'), ensure_ascii=False)});
 						return;
 					}
 					days|=0x80;
@@ -270,7 +270,7 @@ $code:
 				var ds = parseInt(jQuery("#tds").val());
 				var duration = dm*60 + ds;
 				if (!(dm>=0 && ds>=0 && ds<60 && duration>0)) {
-					alert("Error: Incorrect duration.");
+					alert($:{json.dumps(_('Error: Incorrect duration.'), ensure_ascii=False)});
 					return;
 				}
 				
@@ -284,7 +284,7 @@ $code:
 				}
 				if (startTime >= endTime) {
 					// Possible bug - can you run a program from 10PM to 2AM?
-					alert("Error: Start time must be prior to end time.");
+					alert($:{json.dumps(_('Error: Start time must be prior to end time.'), ensure_ascii=False)});
 					return;
 				}
 				
@@ -319,27 +319,28 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home" title="Home">Home</button>
-					<button id="bPrograms" class="programs here" title="Define Programs">Programs</button>
-					<button id="bRunOnce" class="start" title="Define Run Once Program">Run Once</button>
-					<button id="bLog" class="log" title="View Log">Log</button>
-					<button id="bOptions" class="options" title="Options">Options</button>
-					<button id="bStations" class="stations" title="Configure Stations">Stations</button>
+					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
+					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
+					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
+					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
+					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
+					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
-						<button id="bLogout" class="logout" title="Logout">Logout</button>
+						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 		
 				<div id="programs">
-					<div class="title">${"Edit Program #" + str(pid+1) if (pid>-1) else "Add a New Program"}</div>
+					<div class="title">${_("Edit Program #") + str(pid+1) if (pid>-1) else _("Add a New Program")}</div>
 					<form name="mf" id="mf" action="cp" method="get">
 						<input type="hidden" name="pid" value="${pid}">
 						<input type="hidden" name="v" value="$:{program}">
 						<div style="padding-left:5px;padding-right:5px;">
-							<p><button id="cProgramEnabled" class="toggle ${'on' if program[0] else 'off'}"><span class='toggleleft'>Program On</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Program Off</span></button></p>
+							<p><button id="cProgramEnabled" class="toggle ${'on' if program[0] else 'off'}"><span class='toggleleft'>$_('Program On')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Program Off')</span></button></p>
 							<div class="controlBlock">
 								<p>
 								$ t = formatTime(twoDigits(program[3]/60) + ":" + twoDigits(program[3]%60))
-									<b>Start Time:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tsh" value="${t.split(":")[0]}"> : 
+									<b>$_('Start Time'):</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tsh" value="${t.split(":")[0]}"> : 
 									<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tsm" value="${t.split(":")[1][0:2]}">
 								$if tf:
 									(hh:mm)
@@ -351,13 +352,13 @@ $code:
 								</p>
 								<p><b>Duration:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="3" id="tdm" value="${twoDigits(program[6]/60)}"> : 
 								<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tds" value="${twoDigits(program[6]%60)}"> (mm:ss)</p>
-								<p><button id="cRecurring" class="toggle choice ${'off' if recurring else 'on'}"><span class='toggleleft'>Single pass</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Recurring</span></button></p>
+								<p><button id="cRecurring" class="toggle choice ${'off' if recurring else 'on'}"><span class='toggleleft'>$_('Single pass')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Recurring')</span></button></p>
 								<div id="recurr" $:{"" if recurring else "style='display:none'"}>
 									<p><b>Every:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tih" value="${twoDigits(program[5]/60)}"> : 
 									<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tim" value="${twoDigits(program[5]%60)}"> (hh:mm)</p>
 									<p>
 									$ t = formatTime(twoDigits(program[4]/60) + ":" + twoDigits(program[4]%60))
-										<b>Until:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="teh" value="${t.split(":")[0]}"> : 
+										<b>$_('Until'):</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="teh" value="${t.split(":")[0]}"> : 
 										<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tem" value="${t.split(":")[1][0:2]}">
 									$if tf:
 										(hh:mm)
@@ -369,24 +370,24 @@ $code:
 									</p>
 								</div>
 							</div>
-							<p><button id="cWeeklyInterval" class="toggle choice ${'on' if weekly else 'off'}"><span class='toggleleft'>Weekly</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Interval</span></button></p>
+							<p><button id="cWeeklyInterval" class="toggle choice ${'on' if weekly else 'off'}"><span class='toggleleft'>$_('Weekly')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Interval')</span></button></p>
 							<table id="stations" class="stationList">
 								<tr class="showWeekly" $:{"" if weekly else "style='display:none'"}>
 									<td colspan="2"></td>
 									<td colspan="7" style="text-align:center">
-										<button id="allWeekdays" class="execute">Select All</button>
-										<button id="noWeekdays" class="execute">Clear All</button>
+										<button id="allWeekdays" class="execute">$_('Select All')</button>
+										<button id="noWeekdays" class="execute">$_('Clear All')</button>
 									</td>
 								</tr>
 								<tr class="showWeekly" $:{"" if weekly else "style='display:none'"}>
 									<td colspan="2"></td>
-									<td><button id="day0" class="weekday pushon ${"on" if program[1]&(1<<0) else "off"}">Monday</button></td>
-									<td><button id="day1" class="weekday pushon ${"on" if program[1]&(1<<1) else "off"}">Tuesday</button></td>
-									<td><button id="day2" class="weekday pushon ${"on" if program[1]&(1<<2) else "off"}">Wednesday</button></td>
-									<td><button id="day3" class="weekday pushon ${"on" if program[1]&(1<<3) else "off"}">Thursday</button></td>
-									<td><button id="day4" class="weekday pushon ${"on" if program[1]&(1<<4) else "off"}">Friday</button></td>
-									<td><button id="day5" class="weekday pushon ${"on" if program[1]&(1<<5) else "off"}">Saturday</button></td>
-									<td><button id="day6" class="weekday pushon ${"on" if program[1]&(1<<6) else "off"}">Sunday</button></td>
+									<td><button id="day0" class="weekday pushon ${"on" if program[1]&(1<<0) else "off"}">$_('Monday')</button></td>
+									<td><button id="day1" class="weekday pushon ${"on" if program[1]&(1<<1) else "off"}">$_('Tuesday')</button></td>
+									<td><button id="day2" class="weekday pushon ${"on" if program[1]&(1<<2) else "off"}">$_('Wednesday')</button></td>
+									<td><button id="day3" class="weekday pushon ${"on" if program[1]&(1<<3) else "off"}">$_('Thursday')</button></td>
+									<td><button id="day4" class="weekday pushon ${"on" if program[1]&(1<<4) else "off"}">$_('Friday')</button></td>
+									<td><button id="day5" class="weekday pushon ${"on" if program[1]&(1<<5) else "off"}">$_('Saturday')</button></td>
+									<td><button id="day6" class="weekday pushon ${"on" if program[1]&(1<<6) else "off"}">$_('Sunday')</button></td>
 								</td>
 								$ firstTime = True
 								$for bid in range(0, gv.sd['nbrd']):
@@ -399,14 +400,14 @@ $code:
 							 				<tr>
 												<td class='station_name'>${snames[sid]}</td>
 												<td>
-													<button id="station${sid}" class='station toggle narrow ${'on' if stationEnabled else 'off'}'><span class='toggleleft'>On</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Off</span></button>
+													<button id="station${sid}" class='station toggle narrow ${'on' if stationEnabled else 'off'}'><span class='toggleleft'>$_('On')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Off')</span></button>
 												</td>
 												$for d in range(0,7):
 													$ status = ("stationOn" if stationEnabled else "") + (" dayOn" if program[1]&(1<<d) else "")
 													<td class="showWeekly stationState ${status} station${sid} day${d}" $:{"" if weekly else "style='display:none'"}></td>
 												$if firstTime:
 													<td class="showInterval" $:{"style='display:none'" if weekly else ""} rowspan="${stationsShown}">
-														<p>Water interval:</p>
+														<p>$_('Water interval'):</p>
 														<div id="intervalSelector" class="animatedSelector controlblock">
 															<!--  Customize this with any set of intervals you like up to 127 -->
 															<span class="intervalSelect ${"distance0" if weekly else ""}">2</span>
@@ -422,7 +423,7 @@ $code:
 															<span class="intervalSelect">21</span>
 															<span class="intervalSelect">30</span>
 														</div>
-														<p>Starting in:</p>
+														<p>$_('Starting in'):</p>
 														<div id="intervalDelaySelector" class="animatedSelector controlblock">
 															$if weekly:
 																<span class="intervalSelect distance0">0</span>
@@ -436,10 +437,10 @@ $code:
 								<tr class="showWeekly" $:{"" if weekly else "style='display:none'"}>
 									<td colspan="2"></td>
 									<td colspan="7">
-										<button id="cRestrictions" class="toggle choice ${'off' if even or odd else 'on'}"><span class='toggleleft'>Any Day</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Restrict Day</span></button>
+										<button id="cRestrictions" class="toggle choice ${'off' if even or odd else 'on'}"><span class='toggleleft'>$_('Any Day')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Restrict Day')</span></button>
 										<span id="evenodd" $:{"" if even or odd else "style='display:none'"}>
-											<button id="cEvenOdd" class="toggle narrow choice ${'on' if even else 'off'}" ><span class='toggleleft'>Even</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>Odd</span></button>
-											(except 31st and Feb 29th)</span>
+											<button id="cEvenOdd" class="toggle narrow choice ${'on' if even else 'off'}" ><span class='toggleleft'>$_('Even')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Odd')</span></button>
+											$_('(except 31st and Feb 29th)')</span>
 									</td>
 								</tr>
 							</table>
@@ -448,8 +449,8 @@ $code:
 				</div>
 				
 				<div id="controls">
-					<button id="cSubmit" class="submit"><b>Save</b></button>
-					<button id="cCancel" class="cancel danger">Cancel</button>
+					<button id="cSubmit" class="submit"><b>$_('Save')</b></button>
+					<button id="cCancel" class="cancel danger">$_('Cancel')</button>
 					<span id="errorHint"></span>
 				</div>
 				<div id="log"></div>
@@ -457,8 +458,8 @@ $code:
 		</div>
 		
 		<div class="footer">
-			<p>CPU Temp: <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
-			<p><a href="https://github.com/Dan-in-CA/OSPi">Software</a> version: <b>${".".join(list(str(gv.ver)))}</b></p>
+			<p>$_('CPU Temp:') <b><span id="heat" style="cursor:pointer" title="Click to toggle Celsius &lt;&gt; Fahrenheit"></span></b></p>
+			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
 </body>
