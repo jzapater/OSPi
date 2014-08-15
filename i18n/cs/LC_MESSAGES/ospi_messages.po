@@ -1,0 +1,1011 @@
+# Copyright (C) 2014
+# Dan Kimberling dkimberling59@gmail.com, 2014.
+# Translate to Czech Language Martin Pihrt (martinpihrt@gmail.com), 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0.3\n"
+"POT-Creation-Date: 2014-07-30 11:31+Pacific Daylight Time\n"
+"PO-Revision-Date: 2014-08-13 16:24-0800\n"
+"Last-Translator: Martin Pihrt martinpihrt@seznam.cz\n"
+"Language-Team: Czech\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Language: cs\n"
+"X-Generator: Poedit 1.6.7\n"
+
+#: gpio_pins.py:12
+msgid "No GPIO module was loaded from GPIO Pins module"
+msgstr ""
+
+#: gv.py:8
+msgid "System name"
+msgstr "Název zaøízení"
+
+#: gv.py:8
+msgid "Unique name of this OpenSprinkler system."
+msgstr "Jedineèný název pro OpenSprinkler zaøízení."
+
+#: gv.py:8 gv.py:9 gv.py:11
+msgid "System"
+msgstr ""
+
+#: gv.py:9
+msgid "City name or zip code. Use comma or + in place of space."
+msgstr "Název mìsta, nebo smìrovací èíslo. Použijte èárku nebo + pro oddìlení."
+
+#: gv.py:9
+msgid "Location"
+msgstr "Umístìní"
+
+#: gv.py:10
+msgid "Example: GMT-4:00, GMT+5:30 (effective after reboot.)"
+msgstr "Pøíklad: GMT-4:00, GMT+5:30 (Platné až po restartu.)"
+
+#: gv.py:10
+msgid "Time zone"
+msgstr "Èasové pásmo"
+
+#: gv.py:11
+msgid "24-hour clock"
+msgstr "24-hodinový èas"
+
+#: gv.py:11
+msgid "Display times in 24 hour format (as opposed to AM/PM style.)"
+msgstr "Zobrazení èasu ve 24hodinovém formátu (na rozdíl od AM/PM stylu.)"
+
+#: gv.py:12
+msgid "HTTP port"
+msgstr "HTTP port"
+
+#: gv.py:12
+msgid "HTTP port (effective after reboot.)"
+msgstr "HTTP port (Platné až po restartu.)"
+
+#: gv.py:13
+msgid "Allow anonymous users to access the system without a password."
+msgstr "Povolit anonymním uživatelùm pøístup do systému bez hesla."
+
+#: gv.py:13
+msgid "Disable security"
+msgstr "Zakázat zabezpeèení"
+
+#: gv.py:13 gv.py:14 gv.py:16
+msgid "Change Password"
+msgstr ""
+
+#: gv.py:14
+msgid "Current password"
+msgstr "Aktuální heslo"
+
+#: gv.py:14
+msgid "Re-enter the current password."
+msgstr "Znovu zadejte aktuální heslo."
+
+#: gv.py:15
+msgid "Enter a new password."
+msgstr "Vložte nové heslo."
+
+#: gv.py:15
+msgid "New password"
+msgstr "Nové heslo"
+
+#: gv.py:16
+msgid "Confirm password"
+msgstr "Potvrdit heslo"
+
+#: gv.py:16
+msgid "Confirm the new password."
+msgstr "Potcrdit nové heslo."
+
+#: gv.py:17
+msgid "Sequential"
+msgstr "Sekvence"
+
+#: gv.py:17
+msgid "Sequential or concurrent running mode."
+msgstr "Režim sekvenèní, nebo soubìžný bìh stanic."
+
+#: gv.py:17 gv.py:18 gv.py:19
+msgid "Station Handling"
+msgstr ""
+
+#: gv.py:18
+msgid "Extension boards"
+msgstr "Rozšiøující desky"
+
+#: gv.py:18
+msgid "Number of extension boards."
+msgstr "Poèet rozšiøujících desek."
+
+#: gv.py:19
+msgid "Station delay"
+msgstr "Zpoždìní stanice"
+
+#: gv.py:19
+msgid "Station delay time (in seconds), between 0 and 240."
+msgstr "Èas zpoždìní (ve vteøinách), rozsah 0 - 240."
+
+#: gv.py:20
+msgid "Master station"
+msgstr "Hlavní stanice"
+
+#: gv.py:20
+msgid "Select master station."
+msgstr "Volba hlavní stanice."
+
+#: gv.py:21
+msgid "Master on adjust"
+msgstr "Nastavení zapnutí hlavní stanice"
+
+#: gv.py:21
+msgid "Master on delay (in seconds), between +0 and +60."
+msgstr "Èas zpoždìní zapnutí hlavní stanice (ve vteøinách), rozsah +0 až +60."
+
+#: gv.py:21 gv.py:22
+msgid "Configure Master"
+msgstr ""
+
+#: gv.py:22
+msgid "Master off adjust"
+msgstr "Nastavení vypnutí hlavní stanice"
+
+#: gv.py:22
+msgid "Master off delay (in seconds), between -60 and +60."
+msgstr "Èas zpoždìní vypnutí hlavní stanice (ve vteøinách), rozsah -60 až +60."
+
+#: gv.py:23
+msgid "Use rain sensor"
+msgstr "Používat dešťový senzor"
+
+#: gv.py:23
+msgid "Use rain sensor."
+msgstr "Používat dešťový senzor."
+
+#: gv.py:23 gv.py:24
+msgid "Rain Sensor"
+msgstr "Dešťový senzor"
+
+#: gv.py:24
+msgid "Normally open"
+msgstr "V klidu je kontakt rozpojen"
+
+#: gv.py:24
+msgid "Rain sensor type."
+msgstr ""
+
+#: gv.py:25
+msgid "Enable logging"
+msgstr "Povolení záznamu"
+
+#: gv.py:25
+msgid ""
+"Log all events - note that repetitive writing to an SD card can shorten its "
+"lifespan."
+msgstr ""
+"Berte na vědomí, že opakující se zápis na SD kartu může zkrátit její "
+"životnost. (neplatí v případě, že je systém na USB disku)."
+
+#: gv.py:25 gv.py:26
+msgid "Logging"
+msgstr ""
+
+#: gv.py:26
+msgid "Length of log to keep, 0=no limits."
+msgstr "Množství záznamů, 0= bez omezení."
+
+#: gv.py:26
+msgid "Max log entries"
+msgstr "Max počet záznamů"
+
+#: ospi.py:126
+msgid "Run-once"
+msgstr "Jednorázový"
+
+#: ospi.py:128 templates\home.html:314
+msgid "Manual"
+msgstr "Manuál"
+
+#: ospi.py:233
+msgid "Starting timing loop"
+msgstr "Startuji časovou smyčku"
+
+#: ospi.py:509
+msgid "Incorrect password, please try again"
+msgstr "Špatné heslo, zkuste to prosím znovu"
+
+#: ospi.py:774
+msgid "not found."
+msgstr "nenalezeno."
+
+#: ospi.py:774 templates\log.html:105 templates\options.html:160
+#: templates\stations.html:134
+msgid "Station"
+msgstr "Stanice"
+
+#: ospi.py:961
+msgid "Python Interval Program for OpenSprinkler Pi"
+msgstr ""
+
+#: ospi.py:962
+msgid "Compatable with OpenSprinkler firmware 1.8.3."
+msgstr ""
+
+#: ospi.py:963
+msgid "Includes plugin archetecture"
+msgstr ""
+
+#: ospi.py:964
+msgid "ospi.py revision"
+msgstr ""
+
+#: ospi.py:965
+msgid "updated"
+msgstr ""
+
+#: ospi.py:995 ospi.py:1017 templates\home.html:94
+msgid "on"
+msgstr "zap"
+
+#: ospi.py:1003
+msgid "master"
+msgstr ""
+
+#: ospi.py:1012 templates\home.html:88
+msgid "Manual Mode"
+msgstr ""
+
+#: ospi.py:1014
+msgid "Run-once Program"
+msgstr ""
+
+#: ospi.py:1018 ospi.py:1026
+msgid "program"
+msgstr "program"
+
+#: ospi.py:1023
+msgid "off"
+msgstr "vyp"
+
+#: ospi.py:1025
+msgid "waiting"
+msgstr ""
+
+#: ospi.py:1068
+msgid "Date, Start Time, Zone, Duration, Program"
+msgstr ""
+
+#: templates\home.html:29
+msgid "OpenSprinkler Pi"
+msgstr "OpenSprinkler Pi"
+
+#: templates\home.html:84
+msgid "n/a"
+msgstr "n/a"
+
+#: templates\home.html:91 templates\runonce.html:107
+msgid "Run Once Program"
+msgstr "Jednorázový program"
+
+#: templates\home.html:94
+msgid "ran"
+msgstr ""
+
+#: templates\home.html:94 templates\home.html:343 templates\programs.html:185
+msgid "for"
+msgstr "vyvolal"
+
+#: templates\home.html:118
+msgid "Master On"
+msgstr "Hlavní stanice zap"
+
+#: templates\home.html:120
+msgid "Master Off"
+msgstr "Hlavní stanice vyp"
+
+#: templates\home.html:125
+msgid "Suppressed by Rain Delay"
+msgstr "Potlačeno dešťovým zpožděním"
+
+#: templates\home.html:128
+msgid "Suppressed by Rain Sensor"
+msgstr "Potlačeno senzorem deště"
+
+#: templates\home.html:131 templates\home.html:342 templates\modify.html:403
+msgid "Off"
+msgstr "Vyp"
+
+#: templates\home.html:190
+msgid "Enter hours to delay"
+msgstr "Vložte zpoždění v hodinách"
+
+#: templates\home.html:202
+msgid "Enter percentage adjustment"
+msgstr "Vložte procentuální nastavení"
+
+#: templates\home.html:221 templates\runonce.html:52
+msgid "Timer values wrong"
+msgstr "Špatná hodnota časovače"
+
+#: templates\home.html:292 templates\log.html:81 templates\login.html:52
+#: templates\modify.html:322 templates\options.html:111
+#: templates\programs.html:135 templates\runonce.html:95
+#: templates\schedule.html:225 templates\stations.html:118
+msgid "Home"
+msgstr "Úvod"
+
+#: templates\home.html:293 templates\log.html:82 templates\modify.html:323
+#: templates\options.html:112 templates\programs.html:136
+#: templates\runonce.html:96 templates\schedule.html:226
+#: templates\stations.html:119
+msgid "Define Programs"
+msgstr "Nastavit programy"
+
+#: templates\home.html:293 templates\log.html:82 templates\modify.html:323
+#: templates\options.html:112 templates\programs.html:136
+#: templates\runonce.html:96 templates\schedule.html:226
+#: templates\stations.html:119
+msgid "Programs"
+msgstr "Programy"
+
+#: templates\home.html:294 templates\log.html:83 templates\modify.html:324
+#: templates\options.html:113 templates\programs.html:137
+#: templates\runonce.html:97 templates\schedule.html:227
+#: templates\stations.html:120
+msgid "Define Run Once Program"
+msgstr "Nastavit jednorázový program"
+
+#: templates\home.html:294 templates\log.html:83 templates\modify.html:324
+#: templates\options.html:113 templates\programs.html:137
+#: templates\runonce.html:97 templates\schedule.html:227
+#: templates\stations.html:120
+msgid "Run Once"
+msgstr "Jednorázový"
+
+#: templates\home.html:295 templates\log.html:84 templates\modify.html:325
+#: templates\programs.html:138 templates\runonce.html:98
+#: templates\schedule.html:228 templates\stations.html:121
+msgid "Acces Plugins"
+msgstr "Dostupné moduly"
+
+#: templates\home.html:295 templates\log.html:84 templates\modify.html:325
+#: templates\programs.html:138 templates\runonce.html:98
+#: templates\schedule.html:228 templates\stations.html:121
+msgid "Plugins"
+msgstr "Zásuvné moduly"
+
+#: templates\home.html:296 templates\log.html:85 templates\log.html:93
+#: templates\modify.html:326 templates\options.html:114
+#: templates\programs.html:139 templates\runonce.html:99
+#: templates\schedule.html:229 templates\stations.html:122
+msgid "Log"
+msgstr "Záznam"
+
+#: templates\home.html:296 templates\log.html:85 templates\modify.html:326
+#: templates\options.html:114 templates\programs.html:139
+#: templates\runonce.html:99 templates\schedule.html:229
+#: templates\stations.html:122
+msgid "View Log"
+msgstr "Zobrazit záznam"
+
+#: templates\home.html:297 templates\log.html:86 templates\modify.html:327
+#: templates\options.html:115 templates\programs.html:140
+#: templates\runonce.html:100 templates\schedule.html:230
+#: templates\stations.html:123
+msgid "Options"
+msgstr "Nastavení"
+
+#: templates\home.html:298 templates\log.html:87 templates\modify.html:328
+#: templates\options.html:116 templates\programs.html:141
+#: templates\runonce.html:101 templates\schedule.html:231
+#: templates\stations.html:124
+msgid "Stations"
+msgstr "Stanice"
+
+#: templates\home.html:298 templates\log.html:87 templates\modify.html:328
+#: templates\options.html:116 templates\programs.html:141
+#: templates\runonce.html:101 templates\schedule.html:231
+#: templates\stations.html:124 templates\stations.html:130
+msgid "Configure Stations"
+msgstr "Nastavení stanic"
+
+#: templates\home.html:300 templates\log.html:89 templates\login.html:53
+#: templates\modify.html:330 templates\options.html:118
+#: templates\programs.html:143 templates\runonce.html:103
+#: templates\schedule.html:233 templates\stations.html:126
+msgid "Logout"
+msgstr "Odhlásit se"
+
+#: templates\home.html:304
+msgid "System Off"
+msgstr "Systém vyp"
+
+#: templates\home.html:304
+msgid "System On"
+msgstr "Systém zap"
+
+#: templates\home.html:306
+msgid "Normal"
+msgstr "Normál"
+
+#: templates\home.html:306
+msgid "Water Level"
+msgstr "Úroveň vody"
+
+#: templates\home.html:308
+msgid "Active"
+msgstr "Aktivní"
+
+#: templates\home.html:308
+msgid "Rain Delay"
+msgstr "Dešťové zpoždění"
+
+#: templates\home.html:312
+msgid "rain sensed"
+msgstr "detekován déšť"
+
+#: templates\home.html:312 templates\log.html:98
+msgid "no"
+msgstr "ne"
+
+#: templates\home.html:314
+msgid "Auto"
+msgstr "Auto"
+
+#: templates\home.html:334
+msgid "On (Master)"
+msgstr "Zap (hl. stanice)"
+
+#: templates\home.html:336
+msgid "Off (Master)"
+msgstr "Vyp (hl. stanice)"
+
+#: templates\home.html:342 templates\modify.html:403
+msgid "On"
+msgstr "Zap"
+
+#: templates\home.html:343
+msgid "in"
+msgstr "v"
+
+#: templates\home.html:360
+msgid "Prev Day"
+msgstr "Včera"
+
+#: templates\home.html:361
+msgid "Today"
+msgstr "Dnes"
+
+#: templates\home.html:362
+msgid "Next Day"
+msgstr "Zítra"
+
+#: templates\home.html:400
+msgid "loading..."
+msgstr "nahrávám..."
+
+#: templates\home.html:429
+msgid "Stop All Stations"
+msgstr "Zastavit všechny stanice"
+
+#: templates\home.html:453 templates\modify.html:461
+#: templates\programs.html:203 templates\runonce.html:136
+#: templates\schedule.html:244 templates\stations.html:183
+msgid "CPU Temp:"
+msgstr "Teplota CPU"
+
+#: templates\home.html:454 templates\log.html:134 templates\login.html:58
+#: templates\modify.html:462 templates\options.html:188
+#: templates\programs.html:204 templates\runonce.html:137
+#: templates\schedule.html:245 templates\stations.html:184
+msgid "Software"
+msgstr "Program"
+
+#: templates\home.html:454 templates\log.html:134 templates\login.html:58
+#: templates\modify.html:462 templates\options.html:188
+#: templates\programs.html:204 templates\runonce.html:137
+#: templates\schedule.html:245 templates\stations.html:184
+msgid "version"
+msgstr "verze"
+
+#: templates\log.html:32
+msgid "OpenSprinkler Pi Log"
+msgstr "OpenSprinkler Pi záznam"
+
+#: templates\log.html:98
+msgid "Total number of records"
+msgstr "Celkem záznamů"
+
+#: templates\log.html:98
+msgid "limit"
+msgstr "limit"
+
+#: templates\log.html:99
+msgid "Download log as"
+msgstr "Stáhnout záznam jako"
+
+#: templates\log.html:103
+msgid "Date"
+msgstr "Datum"
+
+#: templates\log.html:104 templates\modify.html:343
+msgid "Start Time"
+msgstr "Čas startu"
+
+#: templates\log.html:106
+msgid "Duration"
+msgstr "Doba běhu"
+
+#: templates\log.html:107
+msgid "Program"
+msgstr "Program"
+
+#: templates\log.html:125
+msgid "Refresh"
+msgstr "Obnovit"
+
+#: templates\log.html:126
+msgid "Clear Log"
+msgstr "Smazat záznamy"
+
+#: templates\log.html:133 templates\options.html:187
+msgid "CPU Temp"
+msgstr "Teplota CPU"
+
+#: templates\login.html:11
+msgid "OpenSprinkler Pi Login"
+msgstr "OpenSprinkler Pi Přihlášení"
+
+#: templates\login.html:48
+msgid "Login"
+msgstr "Přihlášení"
+
+#: templates\login.html:51
+msgid "You are already logged in.  Log out to login as another user."
+msgstr ""
+
+#: templates\modify.html:55
+msgid "OpenSprinkler Pi Modify Program"
+msgstr "OpenSprinkler Pi Úprava programů"
+
+#: templates\modify.html:90
+msgid "Error: Incorrect time input "
+msgstr "Chyba: Čas je zadán špatně "
+
+#: templates\modify.html:102
+msgid "Please choose at least one weekday for the program to run."
+msgstr "Vyberte prosím alespoň jeden den v týdnu pro spuštění programu."
+
+#: templates\modify.html:106
+msgid "Please choose at least one station to run in this program."
+msgstr "Vyberte prosím alespoň jednu stanici pro spuštění v tomto programu."
+
+#: templates\modify.html:252
+msgid "Error: starting in days wrong."
+msgstr "Chyba: Začátek ve špatném dnu. "
+
+#: templates\modify.html:273
+msgid "Error: Incorrect duration."
+msgstr "Chyba: Doba běhu."
+
+#: templates\modify.html:287
+msgid "Error: Start time must be prior to end time."
+msgstr "Chyba: Čas Spuštění musí být před koncem vypnutí."
+
+#: templates\modify.html:334
+msgid "Edit Program #"
+msgstr "Úprava programu #"
+
+#: templates\modify.html:334 templates\programs.html:157
+msgid "Add a New Program"
+msgstr "Přidat nový program"
+
+#: templates\modify.html:339
+msgid "Program Off"
+msgstr "Program vyp"
+
+#: templates\modify.html:339
+msgid "Program On"
+msgstr "Program zap"
+
+#: templates\modify.html:355
+msgid "Recurring"
+msgstr "Opakující se"
+
+#: templates\modify.html:355
+msgid "Single pass"
+msgstr "Jedno spuštění"
+
+#: templates\modify.html:361
+msgid "Until"
+msgstr "Do"
+
+#: templates\modify.html:373
+msgid "Interval"
+msgstr "Interval"
+
+#: templates\modify.html:373
+msgid "Weekly"
+msgstr "Týdně"
+
+#: templates\modify.html:378
+msgid "Select All"
+msgstr "Označit vše"
+
+#: templates\modify.html:379
+msgid "Clear All"
+msgstr "Zrušit výběr"
+
+#: templates\modify.html:384
+msgid "Monday"
+msgstr "Pondělí"
+
+#: templates\modify.html:385
+msgid "Tuesday"
+msgstr "Úterý"
+
+#: templates\modify.html:386
+msgid "Wednesday"
+msgstr "Středa"
+
+#: templates\modify.html:387
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+#: templates\modify.html:388
+msgid "Friday"
+msgstr "Pátek"
+
+#: templates\modify.html:389
+msgid "Saturday"
+msgstr "Sobota"
+
+#: templates\modify.html:390
+msgid "Sunday"
+msgstr "Neděle"
+
+#: templates\modify.html:410
+msgid "Water interval"
+msgstr "Interval zalévání"
+
+#: templates\modify.html:426
+msgid "Starting in"
+msgstr "Start v"
+
+#: templates\modify.html:440
+msgid "Any Day"
+msgstr "Každý den"
+
+#: templates\modify.html:440
+msgid "Restrict Day"
+msgstr "Omezení dnů"
+
+#: templates\modify.html:442
+msgid "Even"
+msgstr "Sudé"
+
+#: templates\modify.html:442
+msgid "Odd"
+msgstr "Liché"
+
+#: templates\modify.html:443
+msgid "(except 31st and Feb 29th)"
+msgstr "(s výjimkou 31. a 29.února)"
+
+#: templates\modify.html:452
+msgid "Save"
+msgstr "Uložit"
+
+#: templates\modify.html:453 templates\monthly.html:77
+#: templates\options.html:181 templates\runonce.html:130
+#: templates\stations.html:177
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: templates\monthly.html:6
+msgid "Monthly irrigation adjustments"
+msgstr "Nastavení množství vody dle měsíce"
+
+#: templates\monthly.html:61
+msgid "Monthly Irrigatin Adjustments"
+msgstr "Nastavení množství vody dle měsíce"
+
+#: templates\monthly.html:62
+msgid "Enter an adjustment for each month (% irrigation time)"
+msgstr "Vložte množství vody pro každý měsíc (% času zalévání)"
+
+#: templates\monthly.html:65
+msgid "January:"
+msgstr "Leden:"
+
+#: templates\monthly.html:66
+msgid "February:"
+msgstr "Únor:"
+
+#: templates\monthly.html:67
+msgid "March:"
+msgstr "Březen:"
+
+#: templates\monthly.html:68
+msgid "April:"
+msgstr "Duben:"
+
+#: templates\monthly.html:69
+msgid "May:"
+msgstr "Květen:"
+
+#: templates\monthly.html:70
+msgid "June:"
+msgstr "Červen:"
+
+#: templates\monthly.html:71
+msgid "July:"
+msgstr "Červenec:"
+
+#: templates\monthly.html:72
+msgid "August:"
+msgstr "Srpen:"
+
+#: templates\monthly.html:73
+msgid "September:"
+msgstr "Září:"
+
+#: templates\monthly.html:74
+msgid "October:"
+msgstr "Říjen:"
+
+#: templates\monthly.html:75
+msgid "November:"
+msgstr "Listopad:"
+
+#: templates\monthly.html:76
+msgid "December:"
+msgstr "Prosinec:"
+
+#: templates\monthly.html:77
+msgid "Submit Values"
+msgstr "Odeslat"
+
+#: templates\monthly.html:80
+msgid "Note: In order for this plugin to actually work, The"
+msgstr ""
+
+#: templates\monthly.html:80
+msgid "Python module must be installed."
+msgstr ""
+
+#: templates\monthly.html:80
+msgid "apscheduler"
+msgstr ""
+
+#: templates\monthly.html:81
+msgid "Visit the"
+msgstr ""
+
+#: templates\monthly.html:81
+msgid "Wiki"
+msgstr ""
+
+#: templates\monthly.html:81
+msgid "for instructions."
+msgstr ""
+
+#: templates\options.html:19
+msgid "OpenSprinkler Pi Options"
+msgstr "OpenSprinkler Pi Nastavení"
+
+#: templates\options.html:45 templates\options.html:46
+msgid "Hide Tooltips"
+msgstr "Skrýt nápovědu"
+
+#: templates\options.html:46 templates\options.html:123
+msgid "Show Tooltips"
+msgstr "Zobrazit nápovědu"
+
+#: templates\options.html:75
+msgid "The password given was incorrect."
+msgstr "Heslo není správné"
+
+#: templates\options.html:79
+msgid "Please enter a password."
+msgstr "Prosím vložte heslo."
+
+#: templates\options.html:83
+msgid "Passwords done't match, please re-enter."
+msgstr "Hesla se neshodují, zadejte znovu."
+
+#: templates\options.html:122
+msgid "Edit Options"
+msgstr "Úprava nastavení"
+
+#: templates\options.html:157
+msgid "None"
+msgstr "Žádné"
+
+#: templates\options.html:171
+msgid "System Reboot"
+msgstr "Restart systému"
+
+#: templates\options.html:172
+msgid "Reboot"
+msgstr "Restart"
+
+#: templates\options.html:180 templates\stations.html:175
+msgid "Submit Changes"
+msgstr "Odeslat změny"
+
+#: templates\programs.html:24
+msgid "Every"
+msgstr "Každý"
+
+#: templates\programs.html:24 templates\programs.html:26
+msgid "days"
+msgstr "den(dny)"
+
+#: templates\programs.html:29
+msgid "Every Weekday"
+msgstr "Každý den v týdnu"
+
+#: templates\programs.html:33
+msgid "Fri"
+msgstr "Pá"
+
+#: templates\programs.html:33
+msgid "Mon"
+msgstr "Po"
+
+#: templates\programs.html:33
+msgid "Sat"
+msgstr "So"
+
+#: templates\programs.html:33
+msgid "Sun"
+msgstr "Ne"
+
+#: templates\programs.html:33
+msgid "Thur"
+msgstr "Čt"
+
+#: templates\programs.html:33
+msgid "Tue"
+msgstr "Út"
+
+#: templates\programs.html:33
+msgid "Wed"
+msgstr "St"
+
+#: templates\programs.html:35
+msgid " (Even days only)"
+msgstr "(Pouze sudé dny)"
+
+#: templates\programs.html:37
+msgid " (Odd days only)"
+msgstr "(Pouze liché dny)"
+
+#: templates\programs.html:57
+msgid "OpenSprinkler Pi Programs"
+msgstr "OpenSprinkler Pi Programy"
+
+#: templates\programs.html:158
+msgid "Delete All"
+msgstr "Smazat vše"
+
+#: templates\programs.html:184
+msgid "Starting"
+msgstr "Start"
+
+#: templates\programs.html:188
+msgid "Recurring every"
+msgstr "Opakující se"
+
+#: templates\programs.html:189
+msgid "until"
+msgstr "až"
+
+#: templates\programs.html:192 templates\runonce.html:128
+msgid "Run Now"
+msgstr "Spustit ihned"
+
+#: templates\programs.html:193
+msgid "Edit"
+msgstr "Úprava"
+
+#: templates\programs.html:194
+msgid "Delete"
+msgstr "Smazat"
+
+#: templates\runonce.html:18
+msgid "OpenSprinkler Pi Run-Once"
+msgstr "OpenSprinkler Pi Jednorázový program"
+
+#: templates\runonce.html:62
+msgid "No station is scheduled to run"
+msgstr "Žádná stanice nemá naplánováno spuštění"
+
+#: templates\runonce.html:129
+msgid "Reset Time"
+msgstr "Doba běhu"
+
+#: templates\schedule.html:16
+msgid "OpenSprinkler Pi Schedule"
+msgstr ""
+
+#: templates\schedule.html:236
+msgid "Today's Schedule"
+msgstr ""
+
+#: templates\stations.html:18
+msgid "OpenSprinkler Pi Configure Stations"
+msgstr ""
+
+#: templates\stations.html:135
+msgid "Name"
+msgstr "Jméno"
+
+#: templates\stations.html:136
+msgid "Connected?"
+msgstr "Připojeno"
+
+#: templates\stations.html:137
+msgid "Ignore Rain?"
+msgstr "Ignorovat déšť"
+
+#: templates\stations.html:139
+msgid "Activate Master?"
+msgstr "Aktivovat hl. stanici?"
+
+#: templates\stations.html:150
+msgid "Master valve"
+msgstr "Hl. stanice"
+
+#: templates\stations.html:176
+msgid "Reset Names"
+msgstr "Smazat jména"
+
+#: templates\weather_adj.html:6 templates\weather_adj.html:27
+msgid "Weather-based adjustments"
+msgstr ""
+
+#: templates\weather_adj.html:28
+msgid "Enable/Disable weather based adjustments"
+msgstr ""
+
+#: templates\weather_adj.html:29
+msgid ""
+"When weather-based rain delay is enabled, the weather will be checked for "
+"rain every hour. If the weather reports any condition suggesting rain, a "
+"rain delay is automatically issued using the below set delay duration."
+msgstr ""
+"Pokud je povolen modul předpovědi počasí, bude se kontrolovat déšť každou "
+"hodinu. Pokud jsou meteoslužbou vydány zprávy o počasí naznačující déšť "
+"nastaví se automaticky doba dešťového zpoždění dle nastavení níže."
+
+#: templates\weather_adj.html:33
+msgid "Use Automatic Rain Delay"
+msgstr "Použít automatické zpoždění zalévání"
+
+#: templates\weather_adj.html:35
+msgid "Delay Duration (hours)"
+msgstr "Doba zpoždění (v hodinách)"
+
+#: templates\weather_adj.html:36
+msgid "Weather Provider"
+msgstr "Poskytovatel předpovědi"
+
+#: templates\weather_adj.html:38
+msgid "Yahoo!"
+msgstr "Yahoo!"
+
+#: templates\weather_adj.html:39
+msgid "Wunderground"
+msgstr "Wunderground"
+
+#: templates\weather_adj.html:41
+msgid "Wunderground API Key"
+msgstr "Wunderground API klíč"
+
+#: templates\weather_adj.html:42
+msgid "Submit"
+msgstr "Odeslat"

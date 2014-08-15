@@ -2,10 +2,17 @@
 
 //var deviceTimeOffset = devt - (tz/4-12)*3600000 - Date.now();
 
+//function dateString(d) {
+//	var dateString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()];
+//	dateString += " " + d.getDate() + " ";
+//	dateString += ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()];
+//	return dateString;
+//}
+
 function dateString(d) {
-	var dateString = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][d.getDay()];
+	var dateString = dayList [d.getDay()]; // Moved translatable text to home.html, dk
 	dateString += " " + d.getDate() + " ";
-	dateString += ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][d.getMonth()];
+	dateString += monthList [d.getMonth()]; // Moved translatable text to home.html, dk
 	return dateString;
 }
 

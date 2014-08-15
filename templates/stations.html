@@ -6,10 +6,15 @@ $def with ()
     - Moved inline styling to stylesheet
     - Moved inline behaviors to jQuery.
     Note that the normal jQuery use of the dollar sign conflicts with the templating syntax - used the longer jQuery() throughout.
- -->
+-->
 
 $code:
 	snames = eval(data('snames'))
+	
+$code:
+	days= json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
+	months = json.dumps([_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')])
+	
 
 <html>
 <head>
@@ -34,6 +39,11 @@ $code:
 		var nbrd = ${gv.sd['nbrd']};
 		var mas = ${gv.sd['mas']};
 	</script>
+	<script>
+		// date/time formating helpers
+		var dayList = $:{days};
+    	var monthList = $:{months}
+    </script>
 	<script src="${gv.baseurl}/static/scripts/behaviors.js"></script>
 	<script>		
 		// Initialize behaviors
@@ -115,13 +125,12 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bHome" class="home" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
 					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
 					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
-					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
 					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
 					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
-					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
+					<button id="bStations" class="stations here" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
 					$if not(gv.sd['ipas']):
 						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
@@ -133,10 +142,10 @@ $code:
 							<tr>
 								<th class="stationNumber">$_('Station') </th>
 								<th class="stationName">$_('Name')</th>
-								<th class="stationShow"> $_('Connected?') </th>
-								<th class="stationIgnore">$_('Ignore Rain?')</th>
+								<th class="stationShow"> $_('Connected? ') </th>
+								<th class="stationIgnore"> $_('Ignore Rain? ') </th>
 								$if gv.sd['mas'] > 0:
-									<th class="stationMaster">$_('Activate Master?')</th>
+									<th class="stationMaster"> $_('Activate Master?') </th>
 							</tr>
 							$for bid in range(0,gv.sd['nbrd']):
 								$for s in range(0,8):

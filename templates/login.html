@@ -41,16 +41,12 @@ $def with (form)
 			</div>
 	
 			<div class="panel" style="height:300px; padding-top:100px; padding-left: 50px">
-				<h1>Login</h1>
+				<h1>$_('Login')</h1>
 				$if user == 'anonymous':
     				<form name="test" method="POST"> 
 			    		$:form.render()
 			      		<button id="cSubmit" class="submit"><b>$_('Login')</b></button>
 			    	</form>
-			    $else:
-			    	<p>$_('You are already logged in.  Log out to login as another user.')</p>
-			    	<button id="bHome" class="home" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
-			    	<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 			</div>
 		</div>
 		

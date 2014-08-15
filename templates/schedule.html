@@ -3,7 +3,7 @@ $def with (yy, mm, dd, devday, devmin)
 <!-- 
   2013-13-06: jonathanmarsh
     - Wrapped in template with no other significant change - don't want to mess with this code much because it could use a complete overhaul.
- -->
+-->
 
 $code:
 	snames = eval(data('snames'))
@@ -222,10 +222,9 @@ $code:
 			<div class="panel">
 			
 				<div id="nav">
-					<button id="bHome" class="home here" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
+					<button id="bHome" class="home" title=$:{json.dumps(_('Home'), ensure_ascii=False)}>$_('Home')</button>
 					<button id="bPrograms" class="programs" title=$:{json.dumps(_('Define Programs'), ensure_ascii=False)}>$_('Programs')</button>
 					<button id="bRunOnce" class="start" title=$:{json.dumps(_('Define Run Once Program'), ensure_ascii=False)}>$_('Run Once')</button>
-					<button id="bPlugins" class="Plugins" title=$:{json.dumps(_('Acces Plugins'), ensure_ascii=False)}>$_('Plugins')</button>					
 					<button id="bLog" class="log" title=$:{json.dumps(_('View Log'), ensure_ascii=False)}>$_('Log')</button>
 					<button id="bOptions" class="options" title=$:{json.dumps(_('Options'), ensure_ascii=False)}>$_('Options')</button>
 					<button id="bStations" class="stations" title=$:{json.dumps(_('Configure Stations'), ensure_ascii=False)}>$_('Stations')</button>
@@ -233,7 +232,7 @@ $code:
 						<button id="bLogout" class="logout" title=$:{json.dumps(_('Logout'), ensure_ascii=False)}>$_('Logout')</button>
 				</div>
 		
-				<div class="title">$_('Today's Schedule')</div>
+				<div class="title">$_('Today\'s Schedule')</div>
 				<div id="schedule" style="position:relative"></div>
 			
 				<div id="controls"></div>

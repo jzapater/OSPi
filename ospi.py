@@ -1,31 +1,9 @@
 #!/usr/bin/env python\
 # encoding: utf-8
 
-######################
-#### i18n relates ####
+import i18n
 import os
-import gettext
 import web
-
-
-urls = (
-    '/.*', 'hello',
-    )
-
-# File location directory.
-curdir = os.path.abspath(os.path.dirname(__file__))
-
-# i18n directory.
-localedir = curdir + '/i18n'
-
-gettext.install('ospi_messages', localedir, unicode=True)   
-try:
-    gettext.translation('ospi_messages', localedir, languages=['en_US']).install(True)
-except IOError:
-    pass  
-
-##################
-
 import re, time, datetime, thread, sys # standard Python modules # base64,
 from calendar import timegm
 try:
@@ -130,7 +108,7 @@ def log_run():
             pgr = str(gv.lrun[1])
 
         start = time.gmtime(gv.now - gv.lrun[2])
-        logline = '{_("program"):"' + pgr + '",_("station"):' + str(gv.lrun[0]) + ',_("duration"):"' + timestr(gv.lrun[2]) + '",_("start"):"' + time.strftime('%H:%M:%S",_("date"):"%Y-%m-%d"', start) + '}\n'
+        logline = '{"program":"' + pgr + '","station":' + str(gv.lrun[0]) + ',"duration":"' + timestr(gv.lrun[2]) + '","start":"' + time.strftime('%H:%M:%S","date":"%Y-%m-%d"', start) + '}\n'
         log = read_log()
         log.insert(0, logline)
         f = open('./data/log.json', 'w')
@@ -433,12 +411,12 @@ gv.sd = ({u"en": 1, u"seq": 1, u"mnp": 32, u"ir": [0], u"rsn": 0, u"htp": 8080, 
             u"lr": u"100", u"sdt": 0, u"mas": 0, u"wl": 100, u"bsy": 0, u"lg": u"",
             u"urs": 0, u"nopts": 13, u"pwd": u"b3BlbmRvb3I=", u"password": u"", u"salt": u"", u"ipas": 0, u"rst": 1,
             u"mm": 0, u"mo": [0], u"rbt": 0, u"mtoff": 0, u"nprogs": 1, u"nbrd": 1, u"tu": u"C",
-            u"snlen":32, u"name": u"OpenSprinkler Pi",u"theme": u"basic","show":[255]})
-
+            u"snlen":32, u"name": u"OpenSprinkler Pi",u"theme": u"basic","show":[255], "lang":u"system"})
+ 
 gv.sd['salt'] = passwordSalt()
 gv.sd['password'] = passwordHash('opendoor', gv.sd['salt'])
 # note old passwords stored in the "pwd" option will be lost - reverts to default password.
-
+ 
 try:
     sdf = open('./data/sd.json', 'r') ## A config file ##
     sd_temp = json.load(sdf)
@@ -584,7 +562,7 @@ class view_options:
             errorCode = qdict['errorCode']
         gv.baseurl = baseurl()
         gv.cputemp = CPU_temperature()
-        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_ })
+        render = web.template.render('templates', globals={ 'gv': gv, 'str': str, 'eval': eval, 'data': data, 'json': json, '_':_, 'i18n': i18n })
         return render.options(errorCode)
 
 class change_options:
@@ -636,6 +614,9 @@ class change_options:
             gv.sd['htp']= int(qdict['ohtp'])
         if qdict.has_key('osdt'):
             gv.sd['sdt']= int(qdict['osdt'])
+            
+        if qdict.has_key('olang'):
+            gv.sd['lang'] = (qdict['olang'])    
 
         if qdict.has_key('omas'):
             gv.sd['mas'] = int(qdict['omas'])
@@ -992,15 +973,15 @@ class api_status:
                     status = {'station' : sid, 'status' : 'disabled', 'reason' : '', 'master' : 0, 'programName' : '', 'remaining' : 0}
                     if gv.sd['en'] == 1:
                         if sbit:
-                            status['status'] = _('on')
+                            status['status'] = 'on'
                         if not irbit:
                             if gv.sd['rd'] != 0:
-                                status['reason'] = _('rain_delay')
+                                status['reason'] = 'rain_delay'
                             if gv.sd['urs'] != 0 and gv.sd['rs'] != 0:
-                                status['reason'] = _('rain_sensed')
+                                status['reason'] = 'rain_sensed'
                         if sn == gv.sd['mas']:
                             status['master'] = 1
-                            status['reason'] = _('master')
+                            status['reason'] = 'master'
                         else:
                             rem = gv.ps[sid][1]
                             if rem > 65536:
@@ -1009,25 +990,25 @@ class api_status:
                             id = gv.ps[sid][0]
                             pname = 'P' + str(id)
                             if (id == 255 or id == 99):
-                                pname = _('Manual Mode')
+                                pname = 'Manual Mode'
                             if (id == 254 or id == 98):
-                                pname = _('Run-once Program')
+                                pname = 'Run-once Program'
 
                             if sbit:
-                                status['status'] = _('on')
-                                status['reason'] = _('program')
+                                status['status'] = 'on'
+                                status['reason'] = 'program'
                                 status['programName'] = pname
                                 status['remaining'] = rem
                             else:
                                 if gv.ps[sid][0] == 0:
-                                    status['status'] = _('off')
+                                    status['status'] = 'off'
                                 else:
-                                    status['status'] = _('waiting')
-                                    status['reason'] = _('program')
+                                    status['status'] = 'waiting'
+                                    status['reason'] = 'program'
                                     status['programName'] = pname
                                     status['remaining'] = rem
                     else:
-                        status['reason'] = _('system_off')
+                        status['reason'] = 'system_off'
                     statuslist.append(status)
         web.header('Content-Type', 'application/json')
         return json.dumps(statuslist)
@@ -1046,16 +1027,19 @@ class api_log:
         records = read_log()
         data = []
 
-        for r in records:
-            event = json.loads(r)
-
-            # return any records starting on this date
-            if not(qdict.has_key('date')) or event['date'] == thedate:
-                data.append(event)
-            # also return any records starting the day before and completing after midnight
-            if event['date'] == prevdate:
-                if int(event['start'].split(":")[0])*60 + int(event['start'].split(":")[1]) + int(event['duration'].split(":")[0]) > 24*60:
+        try:
+            for r in records:
+                event = json.loads(r)
+    
+                # return any records starting on this date
+                if not(qdict.has_key('date')) or event['date'] == thedate:
                     data.append(event)
+                # also return any records starting the day before and completing after midnight
+                if event['date'] == prevdate:
+                    if int(event['start'].split(":")[0])*60 + int(event['start'].split(":")[1]) + int(event['duration'].split(":")[0]) > 24*60:
+                        data.append(event)
+        except ValueError:
+            pass                
 
         web.header('Content-Type', 'application/json')
         return json.dumps(data)
@@ -1076,7 +1060,7 @@ class water_log:
 ################################
 #### Code to import plugins ####
 import plugins
-print 'plugins loaded:'
+print _('plugins loaded:')
 print plugins.__all__
 for name in plugins.__all__:
     plugin = getattr(plugins, name)

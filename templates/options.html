@@ -10,7 +10,14 @@ $def with (errorCode)
 
 $code:
 	opts = gv.options
+	languages = i18n.languages
+	langKeys = i18n.languages.keys()
+	langKeys.sort()
 	snames = eval(data('snames'))
+
+$code:
+	days= json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
+	months = json.dumps([_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')])
 
 
 <html>
@@ -37,6 +44,11 @@ $code:
 		var errorCode = "${errorCode}";
 		//var rbt = "${gv.sd['rbt']}";
 	</script>
+	<script>
+		// date/time formating helpers
+		var dayList = $:{days};
+    	var monthList = $:{months}
+    </script>
 	<script src="${gv.baseurl}/static/scripts/behaviors.js"></script>
 	<script>		
 		// Initialize behaviors
@@ -131,7 +143,7 @@ $code:
 							label = opt[0]
 							datatype = opt[1]
 							if datatype != "password":
-								value = gv.sd[opt[2]]
+								opvalue = gv.sd[opt[2]]
 							name = opt[2]
 							tooltip = opt[3]
 							category = opt[4]
@@ -142,30 +154,38 @@ $code:
 							oldcategory = category
 							output += "<div class='option' title='" + tooltip + "'><span class='label'>" + label + ":</span>\n"
 							if datatype == "boolean":
-								output += "<input name='o" + name + "' type='checkbox' " + ("checked" if value>0 else "") + ">\n"
+								output += "<input name='o" + name + "' type='checkbox' " + ("checked" if opvalue>0 else "") + ">\n"
 							elif datatype == "string":
-								output += "<input name='o" + name + "' type='text' size='31' maxlength='31' value='" + value + "'>\n"
+								output += "<input name='o" + name + "' type='text' size='31' maxlength='31' value='" + opvalue + "'>\n"
 							elif datatype == "password":
 								output += "<input name='" + name + "' type='password' size='31' maxlength='31'><span class='inputError' id='error" + name + "'></span>\n"
+							
+							elif name == "lang":
+								output += "<select name= 'olang'>\n"
+								output += "<option " + ("selected " if opvalue=='default' else "") + "value='default'>"+_('Default')+"</option>\n"
+								for L in langKeys:
+									output += "<option " + ("selected " if opvalue==L else "") + "value='"+L+"'>"+languages[L]+"</option>\n"
+								output += "</select>\n"
+							
 							elif name == "tz":
 								output += "<input name='otz' type='hidden' value='0'>\n"
-								tz = value - 48
+								tz = opvalue - 48
 								th = ("+" if tz>=0 else "-") + str(abs(tz)/4>>0)
 								tq = str((abs(tz)%4)*15/10>>0) + str((abs(tz)%4)*15%10)
 								output += "<input name='th' type='text' size='3' maxlength='3' value='"+ th +"'>:<input name='tq' type='text' size='3' maxlength='3' value='" + tq + "'>\n"
 							elif name == "mas":
 								output += "<select name='omas'>\n"
-								output += "<option " + ("selected " if value==0 else "") + "value='0'>"+_('None')+"</option>\n"
+								output += "<option " + ("selected " if opvalue==0 else "") + "value='0'>"+_('None')+"</option>\n"
 								for i in range(0,8):
 									if (gv.sd['show'][0]>>i)&1 == 1:
-										output += "<option " + ("selected " if value==i+1 else "") + "value='" + str(i+1) + "'>" + snames[i] + "  ("+_('Station')+" " + str(i+1) + ")</option>\n"
+										output += "<option " + ("selected " if opvalue==i+1 else "") + "value='" + str(i+1) + "'>" + snames[i] + "  ("+_('Station')+" " + str(i+1) + ")</option>\n"
 								output += "</select>\n"
 							elif name == "htp":
-								output += "<input name='ohtp' type='text' size='5' maxlength='5' value='" + str(value) + "'>\n"
+								output += "<input name='ohtp' type='text' size='5' maxlength='5' value='" + str(opvalue) + "'>\n"
 							elif name == "nbrd":
-								output += "<input name='onbrd' type='text' size='3' maxlength='3' value='" + str(value - 1) + "'>\n"
+								output += "<input name='onbrd' type='text' size='3' maxlength='3' value='" + str(opvalue - 1) + "'>\n"
 							else:
-								output += "<input name='o" + name + "' type='text' size='3' maxlength='3' value='" + str(value) + "'>\n"
+								output += "<input name='o" + name + "' type='text' size='3' maxlength='3' value='" + str(opvalue) + "'>\n"
 										
 							output += "<span class='tooltip'>" + tooltip + "</span>\n"
 							output += "</div>\n\n"

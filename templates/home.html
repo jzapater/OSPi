@@ -14,14 +14,17 @@ $code:
 			pname = "Run Once Program"
 		return pname
 
+$code:
+	days= json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
+	months = json.dumps([_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')])
 
-	<!-- 
+<!-- 
   	2013-10-06: jonathanmarsh
 	- Converted to web.py template, retaining 99% of older look and feel
 	- Moved inline styling to stylesheet
 	- Moved inline behaviors to jQuery.
 	Note that the normal jQuery use of the dollar sign conflicts with the templating syntax - used the longer jQuery() throughout.
- 	-->
+-->
 <html>
 <head>
 	<meta name="viewport" content="width=640">
@@ -72,6 +75,8 @@ $code:
 	<script src="${gv.baseurl}/static/scripts/behaviors.js"></script>
 	<script>
 		// date/time formating helpers
+		var dayList = $:{days};
+    	var monthList = $:{months}
 		//var timezoneSuffix =
 			//((tz-48>=0) ? "+" : "-") +
 			//(Math.abs(tz-48)/4>>0) + ":" +
@@ -263,8 +268,8 @@ $code:
 			}
 		}
 	</script>
-</head>
-<body>
+	</head>
+	<body>
 	<div class="content">
 		<form name="tt" action="ttu" method="get">
 			<input type="hidden" name="tunit">
@@ -273,7 +278,7 @@ $code:
 		<div id="pluginMenu">
 				<ul id="pluginLinks">
 				</ul>
-	    </div>
+		</div>
 		
 		<div class="header">
 			<div class="title">${gv.sd['name'] if gv.sd['name']!="OpenSprinkler Pi" else ""}</div>
@@ -454,5 +459,5 @@ $code:
 			<p><a href="https://github.com/Dan-in-CA/OSPi">$_('Software')</a> $_('version'): <b>${".".join(list(str(gv.ver)))}</b></p>
 		</div>
 	</div>
-</body>
-</html>
+	</body>
+	</html>
