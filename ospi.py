@@ -390,7 +390,7 @@ def output_prog():
             rel_rem = (((op[1]-128) + op[2])-(dse % op[2])) % op[2] # Convert absolute days to relative remaining (rel_rem) days
             op[1] = rel_rem + 128 # Update from saved value based on current date
         lpd.append(op)
-    progstr = 'var nprogs='+str(len(lpd))+',nboards='+str(gv.sd['nbrd'])+',ipas='+str(gv.sd['ipas'])+',mnp='+str(gv.sd['mnp'])+',pd=[];'
+    progstr = 'var nprogs='+str(len(lpd))+',nboards='+str(gv.sd['nbrd'])+',ipas='+str(gv.sd['ipas'])+',pd=[];'
     for i, pro in enumerate(lpd): #gets both index and object
         progstr += 'pd['+str(i)+']='+str(pro).replace(' ', '')+';'
     return progstr
@@ -406,7 +406,7 @@ def passwordHash(password, salt):
 
 #Settings Dictionary. A set of vars kept in memory and persisted in a file.
 #Edit this default dictionary definition to add or remove "key": "value" pairs or change defaults.
-gv.sd = ({u"en": 1, u"seq": 1, u"mnp": 32, u"ir": [0], u"rsn": 0, u"htp": 8080, u"nst": 8,
+gv.sd = ({u"en": 1, u"seq": 1, u"mnp": 64, u"ir": [0], u"rsn": 0, u"htp": 8080, u"nst": 8,
             u"rdst": 0, u"loc": u"", u"tz": 48, u"tf": 1,  u"rs": 0, u"rd": 0, u"mton": 0,
             u"lr": u"100", u"sdt": 0, u"mas": 0, u"wl": 100, u"bsy": 0, u"lg": u"",
             u"urs": 0, u"nopts": 13, u"pwd": u"b3BlbmRvb3I=", u"password": u"", u"salt": u"", u"ipas": 0, u"rst": 1,
@@ -862,9 +862,6 @@ class change_program:
             dse = int(gv.now/86400)
             ref = dse + cp[1]-128
             cp[1] = (ref%cp[2])+128
-        if int(qdict['pid']) > gv.sd['mnp']:
-            alert = '<script>alert("Maximum number of programs\n has been reached.");window.location="/";</script>'
-            return alert
         elif qdict['pid'] == '-1': #add new program
             gv.pd.append(cp)
         else:
@@ -887,8 +884,19 @@ class delete_program:
         jsave(gv.pd, 'programs')
         gv.sd['nprogs'] = len(gv.pd)
         raise web.seeother('/vp')
-        return
 
+                          
+class enable_program:
+    """Activate an existing program(s)."""
+    def GET(self):
+        verifyLogin()
+        qdict = web.input()
+        print 'qdict', qdict
+        gv.pd[int(qdict['pid'])][0] = int(qdict['enable'])
+        jsave(gv.pd, 'programs')
+        raise web.seeother('/vp')
+
+                          
 class view_log:
     """View Log"""
     def GET(self):
