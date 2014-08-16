@@ -4,19 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenSprinkler Pi\n"
-"POT-Creation-Date: 2014-08-08 18:49+Pacific Daylight Time\n"
-"PO-Revision-Date: 2014-08-08 18:55-0800\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-08-16 15:36+Pacific Daylight Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Czech\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
 "Generated-By: pygettext.py 1.5\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"Language: cs\n"
-"X-Generator: Poedit 1.6.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+
 
 #: gpio_pins.py:12
 msgid "No GPIO module was loaded from GPIO Pins module"
@@ -30,7 +27,7 @@ msgstr ""
 msgid "Unique name of this OpenSprinkler system."
 msgstr ""
 
-#: gv.py:8 gv.py:9 gv.py:11
+#: gv.py:8 gv.py:9 gv.py:10 gv.py:11 gv.py:12 gv.py:13
 msgid "System"
 msgstr ""
 
@@ -43,526 +40,621 @@ msgid "Location"
 msgstr ""
 
 #: gv.py:10
-msgid "Example: GMT-4:00, GMT+5:30 (effective after reboot.)"
+msgid "Language"
 msgstr ""
 
 #: gv.py:10
+msgid "Select language (effective after reboot.)"
+msgstr ""
+
+#: gv.py:11
+msgid "Example: GMT-4:00, GMT+5:30 (effective after reboot.)"
+msgstr ""
+
+#: gv.py:11
 msgid "Time zone"
 msgstr ""
 
-#: gv.py:11
+#: gv.py:12
 msgid "24-hour clock"
 msgstr ""
 
-#: gv.py:11
+#: gv.py:12
 msgid "Display times in 24 hour format (as opposed to AM/PM style.)"
 msgstr ""
 
-#: gv.py:12
+#: gv.py:13
 msgid "HTTP port"
 msgstr ""
 
-#: gv.py:12
+#: gv.py:13
 msgid "HTTP port (effective after reboot.)"
 msgstr ""
 
-#: gv.py:13
+#: gv.py:14
 msgid "Allow anonymous users to access the system without a password."
 msgstr ""
 
-#: gv.py:13
+#: gv.py:14
 msgid "Disable security"
 msgstr ""
 
-#: gv.py:13 gv.py:14 gv.py:16
+#: gv.py:14 gv.py:15 gv.py:16 gv.py:17
 msgid "Change Password"
 msgstr ""
 
-#: gv.py:14
+#: gv.py:15
 msgid "Current password"
 msgstr ""
 
-#: gv.py:14
+#: gv.py:15
 msgid "Re-enter the current password."
 msgstr ""
 
-#: gv.py:15
+#: gv.py:16
 msgid "Enter a new password."
 msgstr ""
 
-#: gv.py:15
+#: gv.py:16
 msgid "New password"
 msgstr ""
 
-#: gv.py:16
+#: gv.py:17
 msgid "Confirm password"
 msgstr ""
 
-#: gv.py:16
+#: gv.py:17
 msgid "Confirm the new password."
 msgstr ""
 
-#: gv.py:17
+#: gv.py:18
 msgid "Sequential"
 msgstr ""
 
-#: gv.py:17
+#: gv.py:18
 msgid "Sequential or concurrent running mode."
 msgstr ""
 
-#: gv.py:17 gv.py:18 gv.py:19
+#: gv.py:18 gv.py:19 gv.py:20
 msgid "Station Handling"
 msgstr ""
 
-#: gv.py:18
+#: gv.py:19
 msgid "Extension boards"
 msgstr ""
 
-#: gv.py:18
+#: gv.py:19
 msgid "Number of extension boards."
 msgstr ""
 
-#: gv.py:19
+#: gv.py:20
 msgid "Station delay"
 msgstr ""
 
-#: gv.py:19
+#: gv.py:20
 msgid "Station delay time (in seconds), between 0 and 240."
 msgstr ""
 
-#: gv.py:20
+#: gv.py:21
 msgid "Master station"
 msgstr ""
 
-#: gv.py:20
+#: gv.py:21
 msgid "Select master station."
 msgstr ""
 
-#: gv.py:21
-msgid "Master on adjust"
-msgstr ""
-
-#: gv.py:21
-msgid "Master on delay (in seconds), between +0 and +60."
-msgstr ""
-
-#: gv.py:21 gv.py:22
+#: gv.py:21 gv.py:22 gv.py:23
 msgid "Configure Master"
 msgstr ""
 
 #: gv.py:22
-msgid "Master off adjust"
+msgid "Master on adjust"
 msgstr ""
 
 #: gv.py:22
+msgid "Master on delay (in seconds), between +0 and +60."
+msgstr ""
+
+#: gv.py:23
+msgid "Master off adjust"
+msgstr ""
+
+#: gv.py:23
 msgid "Master off delay (in seconds), between -60 and +60."
 msgstr ""
 
-#: gv.py:23
+#: gv.py:24
 msgid "Use rain sensor"
 msgstr ""
 
-#: gv.py:23
+#: gv.py:24
 msgid "Use rain sensor."
 msgstr ""
 
-#: gv.py:23 gv.py:24
+#: gv.py:24 gv.py:25
 msgid "Rain Sensor"
 msgstr ""
 
-#: gv.py:24
+#: gv.py:25
 msgid "Normally open"
 msgstr ""
 
-#: gv.py:24
+#: gv.py:25
 msgid "Rain sensor type."
 msgstr ""
 
-#: gv.py:25
+#: gv.py:26
 msgid "Enable logging"
 msgstr ""
 
-#: gv.py:25
-msgid ""
-"Log all events - note that repetitive writing to an SD card can shorten its "
-"lifespan."
+#: gv.py:26
+msgid "Log all events - note that repetitive writing to an SD card can shorten its lifespan."
 msgstr ""
 
-#: gv.py:25 gv.py:26
+#: gv.py:26 gv.py:27
 msgid "Logging"
 msgstr ""
 
-#: gv.py:26
+#: gv.py:27
 msgid "Length of log to keep, 0=no limits."
 msgstr ""
 
-#: gv.py:26
+#: gv.py:27
 msgid "Max log entries"
 msgstr ""
 
-#: ospi.py:126
+#: ospi.py:104
 msgid "Run-once"
 msgstr ""
 
-#: ospi.py:128 templates\home.html:314
+#: ospi.py:106 templates\home.html:319
 msgid "Manual"
 msgstr ""
 
-#: ospi.py:233
+#: ospi.py:211
 msgid "Starting timing loop"
 msgstr ""
 
-#: ospi.py:509
+#: ospi.py:487
 msgid "Incorrect password, please try again"
 msgstr ""
 
-#: ospi.py:774
+#: ospi.py:755
 msgid "not found."
 msgstr ""
 
-#: ospi.py:774 templates\log.html:105 templates\options.html:160
-#: templates\stations.html:134
+#: ospi.py:755 templates\log.html:114 templates\options.html:181
+#: templates\stations.html:141
 msgid "Station"
 msgstr ""
 
-#: ospi.py:961
+#: ospi.py:942
 msgid "Python Interval Program for OpenSprinkler Pi"
 msgstr ""
 
-#: ospi.py:962
+#: ospi.py:943
 msgid "Compatable with OpenSprinkler firmware 1.8.3."
 msgstr ""
 
-#: ospi.py:963
+#: ospi.py:944
 msgid "Includes plugin archetecture"
 msgstr ""
 
-#: ospi.py:964
+#: ospi.py:945
 msgid "ospi.py revision"
 msgstr ""
 
-#: ospi.py:965
+#: ospi.py:946
 msgid "updated"
 msgstr ""
 
-#: ospi.py:995 ospi.py:1017 templates\home.html:94
-msgid "on"
-msgstr ""
-
-#: ospi.py:998
-msgid "rain_delay"
-msgstr ""
-
-#: ospi.py:1000
-msgid "rain_sensed"
-msgstr ""
-
-#: ospi.py:1003
-msgid "master"
-msgstr ""
-
-#: ospi.py:1012 templates\home.html:88
-msgid "Manual Mode"
-msgstr ""
-
-#: ospi.py:1014
-msgid "Run-once Program"
-msgstr ""
-
-#: ospi.py:1018 ospi.py:1026
-msgid "program"
-msgstr ""
-
-#: ospi.py:1023
-msgid "off"
-msgstr ""
-
-#: ospi.py:1025
-msgid "waiting"
-msgstr ""
-
-#: ospi.py:1030
-msgid "system_off"
-msgstr ""
-
-#: ospi.py:1068
+#: ospi.py:1052
 msgid "Date, Start Time, Zone, Duration, Program"
 msgstr ""
 
-#: templates\home.html:29
+#: ospi.py:1063
+msgid "plugins loaded:"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:391 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Monday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:392 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Tuesday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:393 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Wednesday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:394 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Thursday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:395 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Friday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:396 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Saturday"
+msgstr ""
+
+#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
+#: templates\modify.html:397 templates\options.html:19
+#: templates\programs.html:53 templates\runonce.html:15
+#: templates\stations.html:13
+msgid "Sunday"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "April"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "August"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "December"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "February"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "January"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "July"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "June"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "March"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "May"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "November"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "October"
+msgstr ""
+
+#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
+#: templates\options.html:20 templates\programs.html:54
+#: templates\runonce.html:16 templates\stations.html:14
+msgid "September"
+msgstr ""
+
+#: templates\home.html:32
 msgid "OpenSprinkler Pi"
 msgstr ""
 
-#: templates\home.html:84
+#: templates\home.html:89
 msgid "n/a"
 msgstr ""
 
-#: templates\home.html:91 templates\runonce.html:107
+#: templates\home.html:93
+msgid "Manual Mode"
+msgstr ""
+
+#: templates\home.html:96 templates\runonce.html:115
 msgid "Run Once Program"
 msgstr ""
 
-#: templates\home.html:94
+#: templates\home.html:99
+msgid "on"
+msgstr ""
+
+#: templates\home.html:99
 msgid "ran"
 msgstr ""
 
-#: templates\home.html:94 templates\home.html:343 templates\programs.html:185
+#: templates\home.html:99 templates\home.html:348 templates\programs.html:193
 msgid "for"
 msgstr ""
 
-#: templates\home.html:118
+#: templates\home.html:123
 msgid "Master On"
 msgstr ""
 
-#: templates\home.html:120
+#: templates\home.html:125
 msgid "Master Off"
 msgstr ""
 
-#: templates\home.html:125
+#: templates\home.html:130
 msgid "Suppressed by Rain Delay"
 msgstr ""
 
-#: templates\home.html:128
+#: templates\home.html:133
 msgid "Suppressed by Rain Sensor"
 msgstr ""
 
-#: templates\home.html:131 templates\home.html:342 templates\modify.html:403
+#: templates\home.html:136 templates\home.html:347 templates\modify.html:410
 msgid "Off"
 msgstr ""
 
-#: templates\home.html:190
+#: templates\home.html:195
 msgid "Enter hours to delay"
 msgstr ""
 
-#: templates\home.html:202
+#: templates\home.html:207
 msgid "Enter percentage adjustment"
 msgstr ""
 
-#: templates\home.html:221 templates\runonce.html:52
+#: templates\home.html:226 templates\runonce.html:61
 msgid "Timer values wrong"
 msgstr ""
 
-#: templates\home.html:292 templates\log.html:81 templates\login.html:52
-#: templates\modify.html:322 templates\options.html:111
-#: templates\programs.html:135 templates\runonce.html:95
-#: templates\schedule.html:225 templates\stations.html:118
+#: templates\home.html:297 templates\log.html:91 templates\modify.html:330
+#: templates\options.html:124 templates\programs.html:144
+#: templates\runonce.html:104 templates\schedule.html:225
+#: templates\stations.html:126
 msgid "Home"
 msgstr ""
 
-#: templates\home.html:293 templates\log.html:82 templates\modify.html:323
-#: templates\options.html:112 templates\programs.html:136
-#: templates\runonce.html:96 templates\schedule.html:226
-#: templates\stations.html:119
+#: templates\home.html:298 templates\log.html:92 templates\modify.html:331
+#: templates\options.html:125 templates\programs.html:145
+#: templates\runonce.html:105 templates\schedule.html:226
+#: templates\stations.html:127
 msgid "Define Programs"
 msgstr ""
 
-#: templates\home.html:293 templates\log.html:82 templates\modify.html:323
-#: templates\options.html:112 templates\programs.html:136
-#: templates\runonce.html:96 templates\schedule.html:226
-#: templates\stations.html:119
+#: templates\home.html:298 templates\log.html:92 templates\modify.html:331
+#: templates\options.html:125 templates\programs.html:145
+#: templates\runonce.html:105 templates\schedule.html:226
+#: templates\stations.html:127
 msgid "Programs"
 msgstr ""
 
-#: templates\home.html:294 templates\log.html:83 templates\modify.html:324
-#: templates\options.html:113 templates\programs.html:137
-#: templates\runonce.html:97 templates\schedule.html:227
-#: templates\stations.html:120
+#: templates\home.html:299 templates\log.html:93 templates\modify.html:332
+#: templates\options.html:126 templates\programs.html:146
+#: templates\runonce.html:106 templates\schedule.html:227
+#: templates\stations.html:128
 msgid "Define Run Once Program"
 msgstr ""
 
-#: templates\home.html:294 templates\log.html:83 templates\modify.html:324
-#: templates\options.html:113 templates\programs.html:137
-#: templates\runonce.html:97 templates\schedule.html:227
-#: templates\stations.html:120
+#: templates\home.html:299 templates\log.html:93 templates\modify.html:332
+#: templates\options.html:126 templates\programs.html:146
+#: templates\runonce.html:106 templates\schedule.html:227
+#: templates\stations.html:128
 msgid "Run Once"
 msgstr ""
 
-#: templates\home.html:295 templates\log.html:84 templates\modify.html:325
-#: templates\programs.html:138 templates\runonce.html:98
-#: templates\schedule.html:228 templates\stations.html:121
+#: templates\home.html:300
 msgid "Acces Plugins"
 msgstr ""
 
-#: templates\home.html:295 templates\log.html:84 templates\modify.html:325
-#: templates\programs.html:138 templates\runonce.html:98
-#: templates\schedule.html:228 templates\stations.html:121
+#: templates\home.html:300
 msgid "Plugins"
 msgstr ""
 
-#: templates\home.html:296 templates\log.html:85 templates\log.html:93
-#: templates\modify.html:326 templates\options.html:114
-#: templates\programs.html:139 templates\runonce.html:99
-#: templates\schedule.html:229 templates\stations.html:122
+#: templates\home.html:301 templates\log.html:94 templates\log.html:102
+#: templates\modify.html:333 templates\options.html:127
+#: templates\programs.html:147 templates\runonce.html:107
+#: templates\schedule.html:228 templates\stations.html:129
 msgid "Log"
 msgstr ""
 
-#: templates\home.html:296 templates\log.html:85 templates\modify.html:326
-#: templates\options.html:114 templates\programs.html:139
-#: templates\runonce.html:99 templates\schedule.html:229
-#: templates\stations.html:122
+#: templates\home.html:301 templates\log.html:94 templates\modify.html:333
+#: templates\options.html:127 templates\programs.html:147
+#: templates\runonce.html:107 templates\schedule.html:228
+#: templates\stations.html:129
 msgid "View Log"
 msgstr ""
 
-#: templates\home.html:297 templates\log.html:86 templates\modify.html:327
-#: templates\options.html:115 templates\programs.html:140
-#: templates\runonce.html:100 templates\schedule.html:230
-#: templates\stations.html:123
+#: templates\home.html:302 templates\log.html:95 templates\modify.html:334
+#: templates\options.html:128 templates\programs.html:148
+#: templates\runonce.html:108 templates\schedule.html:229
+#: templates\stations.html:130
 msgid "Options"
 msgstr ""
 
-#: templates\home.html:298 templates\log.html:87 templates\modify.html:328
-#: templates\options.html:116 templates\programs.html:141
-#: templates\runonce.html:101 templates\schedule.html:231
-#: templates\stations.html:124
+#: templates\home.html:303 templates\log.html:96 templates\modify.html:335
+#: templates\options.html:129 templates\programs.html:149
+#: templates\runonce.html:109 templates\schedule.html:230
+#: templates\stations.html:131
 msgid "Stations"
 msgstr ""
 
-#: templates\home.html:298 templates\log.html:87 templates\modify.html:328
-#: templates\options.html:116 templates\programs.html:141
-#: templates\runonce.html:101 templates\schedule.html:231
-#: templates\stations.html:124 templates\stations.html:130
+#: templates\home.html:303 templates\log.html:96 templates\modify.html:335
+#: templates\options.html:129 templates\programs.html:149
+#: templates\runonce.html:109 templates\schedule.html:230
+#: templates\stations.html:131 templates\stations.html:137
 msgid "Configure Stations"
 msgstr ""
 
-#: templates\home.html:300 templates\log.html:89 templates\login.html:53
-#: templates\modify.html:330 templates\options.html:118
-#: templates\programs.html:143 templates\runonce.html:103
-#: templates\schedule.html:233 templates\stations.html:126
+#: templates\home.html:305 templates\log.html:98 templates\modify.html:337
+#: templates\options.html:131 templates\programs.html:151
+#: templates\runonce.html:111 templates\schedule.html:232
+#: templates\stations.html:133
 msgid "Logout"
 msgstr ""
 
-#: templates\home.html:304
+#: templates\home.html:309
 msgid "System Off"
 msgstr ""
 
-#: templates\home.html:304
+#: templates\home.html:309
 msgid "System On"
 msgstr ""
 
-#: templates\home.html:306
+#: templates\home.html:311
 msgid "Normal"
 msgstr ""
 
-#: templates\home.html:306
+#: templates\home.html:311
 msgid "Water Level"
 msgstr ""
 
-#: templates\home.html:308
+#: templates\home.html:313
 msgid "Active"
 msgstr ""
 
-#: templates\home.html:308
+#: templates\home.html:313
 msgid "Rain Delay"
 msgstr ""
 
-#: templates\home.html:312
+#: templates\home.html:317
 msgid "rain sensed"
 msgstr ""
 
-#: templates\home.html:312 templates\log.html:98
+#: templates\home.html:317 templates\log.html:107
 msgid "no"
 msgstr ""
 
-#: templates\home.html:314
+#: templates\home.html:319
 msgid "Auto"
 msgstr ""
 
-#: templates\home.html:334
+#: templates\home.html:339
 msgid "On (Master)"
 msgstr ""
 
-#: templates\home.html:336
+#: templates\home.html:341
 msgid "Off (Master)"
 msgstr ""
 
-#: templates\home.html:342 templates\modify.html:403
+#: templates\home.html:347 templates\modify.html:410
 msgid "On"
 msgstr ""
 
-#: templates\home.html:343
+#: templates\home.html:348
 msgid "in"
 msgstr ""
 
-#: templates\home.html:360
+#: templates\home.html:365
 msgid "Prev Day"
 msgstr ""
 
-#: templates\home.html:361
+#: templates\home.html:366
 msgid "Today"
 msgstr ""
 
-#: templates\home.html:362
+#: templates\home.html:367
 msgid "Next Day"
 msgstr ""
 
-#: templates\home.html:400
+#: templates\home.html:405
 msgid "loading..."
 msgstr ""
 
-#: templates\home.html:429
+#: templates\home.html:434
 msgid "Stop All Stations"
 msgstr ""
 
-#: templates\home.html:453 templates\modify.html:461
-#: templates\programs.html:203 templates\runonce.html:136
-#: templates\schedule.html:244 templates\stations.html:183
+#: templates\home.html:458 templates\modify.html:468
+#: templates\programs.html:211 templates\runonce.html:144
+#: templates\schedule.html:243 templates\stations.html:190
 msgid "CPU Temp:"
 msgstr ""
 
-#: templates\home.html:454 templates\log.html:134 templates\login.html:58
-#: templates\modify.html:462 templates\options.html:188
-#: templates\programs.html:204 templates\runonce.html:137
-#: templates\schedule.html:245 templates\stations.html:184
+#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\modify.html:469 templates\options.html:209
+#: templates\programs.html:212 templates\runonce.html:145
+#: templates\schedule.html:244 templates\stations.html:191
 msgid "Software"
 msgstr ""
 
-#: templates\home.html:454 templates\log.html:134 templates\login.html:58
-#: templates\modify.html:462 templates\options.html:188
-#: templates\programs.html:204 templates\runonce.html:137
-#: templates\schedule.html:245 templates\stations.html:184
+#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\modify.html:469 templates\options.html:209
+#: templates\programs.html:212 templates\runonce.html:145
+#: templates\schedule.html:244 templates\stations.html:191
 msgid "version"
 msgstr ""
 
-#: templates\log.html:32
+#: templates\log.html:37
 msgid "OpenSprinkler Pi Log"
 msgstr ""
 
-#: templates\log.html:98
+#: templates\log.html:107
 msgid "Total number of records"
 msgstr ""
 
-#: templates\log.html:98
+#: templates\log.html:107
 msgid "limit"
 msgstr ""
 
-#: templates\log.html:99
+#: templates\log.html:108
 msgid "Download log as"
 msgstr ""
 
-#: templates\log.html:103
+#: templates\log.html:112
 msgid "Date"
 msgstr ""
 
-#: templates\log.html:104 templates\modify.html:343
+#: templates\log.html:113 templates\modify.html:350
 msgid "Start Time"
 msgstr ""
 
-#: templates\log.html:106
+#: templates\log.html:115
 msgid "Duration"
 msgstr ""
 
-#: templates\log.html:107
+#: templates\log.html:116
 msgid "Program"
 msgstr ""
 
-#: templates\log.html:125
+#: templates\log.html:134
 msgid "Refresh"
 msgstr ""
 
-#: templates\log.html:126
+#: templates\log.html:135
 msgid "Clear Log"
 msgstr ""
 
-#: templates\log.html:133 templates\options.html:187
+#: templates\log.html:142 templates\options.html:208
 msgid "CPU Temp"
 msgstr ""
 
@@ -570,149 +662,117 @@ msgstr ""
 msgid "OpenSprinkler Pi Login"
 msgstr ""
 
-#: templates\login.html:48
+#: templates\login.html:44 templates\login.html:48
 msgid "Login"
 msgstr ""
 
-#: templates\login.html:51
-msgid "You are already logged in.  Log out to login as another user."
-msgstr ""
-
-#: templates\modify.html:55
+#: templates\modify.html:59
 msgid "OpenSprinkler Pi Modify Program"
 msgstr ""
 
-#: templates\modify.html:90
+#: templates\modify.html:98
 msgid "Error: Incorrect time input "
 msgstr ""
 
-#: templates\modify.html:102
+#: templates\modify.html:110
 msgid "Please choose at least one weekday for the program to run."
 msgstr ""
 
-#: templates\modify.html:106
+#: templates\modify.html:114
 msgid "Please choose at least one station to run in this program."
 msgstr ""
 
-#: templates\modify.html:252
+#: templates\modify.html:260
 msgid "Error: starting in days wrong."
 msgstr ""
 
-#: templates\modify.html:273
+#: templates\modify.html:281
 msgid "Error: Incorrect duration."
 msgstr ""
 
-#: templates\modify.html:287
+#: templates\modify.html:295
 msgid "Error: Start time must be prior to end time."
 msgstr ""
 
-#: templates\modify.html:334
+#: templates\modify.html:341
 msgid "Edit Program #"
 msgstr ""
 
-#: templates\modify.html:334 templates\programs.html:157
+#: templates\modify.html:341 templates\programs.html:165
 msgid "Add a New Program"
 msgstr ""
 
-#: templates\modify.html:339
+#: templates\modify.html:346
 msgid "Program Off"
 msgstr ""
 
-#: templates\modify.html:339
+#: templates\modify.html:346
 msgid "Program On"
 msgstr ""
 
-#: templates\modify.html:355
+#: templates\modify.html:362
 msgid "Recurring"
 msgstr ""
 
-#: templates\modify.html:355
+#: templates\modify.html:362
 msgid "Single pass"
 msgstr ""
 
-#: templates\modify.html:361
+#: templates\modify.html:368
 msgid "Until"
 msgstr ""
 
-#: templates\modify.html:373
+#: templates\modify.html:380
 msgid "Interval"
 msgstr ""
 
-#: templates\modify.html:373
+#: templates\modify.html:380
 msgid "Weekly"
 msgstr ""
 
-#: templates\modify.html:378
+#: templates\modify.html:385
 msgid "Select All"
 msgstr ""
 
-#: templates\modify.html:379
+#: templates\modify.html:386
 msgid "Clear All"
 msgstr ""
 
-#: templates\modify.html:384
-msgid "Monday"
-msgstr ""
-
-#: templates\modify.html:385
-msgid "Tuesday"
-msgstr ""
-
-#: templates\modify.html:386
-msgid "Wednesday"
-msgstr ""
-
-#: templates\modify.html:387
-msgid "Thursday"
-msgstr ""
-
-#: templates\modify.html:388
-msgid "Friday"
-msgstr ""
-
-#: templates\modify.html:389
-msgid "Saturday"
-msgstr ""
-
-#: templates\modify.html:390
-msgid "Sunday"
-msgstr ""
-
-#: templates\modify.html:410
+#: templates\modify.html:417
 msgid "Water interval"
 msgstr ""
 
-#: templates\modify.html:426
+#: templates\modify.html:433 templates\programs.html:26
 msgid "Starting in"
 msgstr ""
 
-#: templates\modify.html:440
+#: templates\modify.html:447
 msgid "Any Day"
 msgstr ""
 
-#: templates\modify.html:440
+#: templates\modify.html:447
 msgid "Restrict Day"
 msgstr ""
 
-#: templates\modify.html:442
+#: templates\modify.html:449
 msgid "Even"
 msgstr ""
 
-#: templates\modify.html:442
+#: templates\modify.html:449
 msgid "Odd"
 msgstr ""
 
-#: templates\modify.html:443
+#: templates\modify.html:450
 msgid "(except 31st and Feb 29th)"
 msgstr ""
 
-#: templates\modify.html:452
+#: templates\modify.html:459
 msgid "Save"
 msgstr ""
 
-#: templates\modify.html:453 templates\monthly.html:77
-#: templates\options.html:181 templates\runonce.html:130
-#: templates\stations.html:177
+#: templates\modify.html:460 templates\monthly.html:77
+#: templates\options.html:202 templates\runonce.html:138
+#: templates\stations.html:184
 msgid "Cancel"
 msgstr ""
 
@@ -804,47 +864,51 @@ msgstr ""
 msgid "for instructions."
 msgstr ""
 
-#: templates\options.html:19
+#: templates\options.html:27
 msgid "OpenSprinkler Pi Options"
 msgstr ""
 
-#: templates\options.html:45 templates\options.html:46
+#: templates\options.html:58 templates\options.html:59
 msgid "Hide Tooltips"
 msgstr ""
 
-#: templates\options.html:46 templates\options.html:123
+#: templates\options.html:59 templates\options.html:136
 msgid "Show Tooltips"
 msgstr ""
 
-#: templates\options.html:75
+#: templates\options.html:88
 msgid "The password given was incorrect."
 msgstr ""
 
-#: templates\options.html:79
+#: templates\options.html:92
 msgid "Please enter a password."
 msgstr ""
 
-#: templates\options.html:83
+#: templates\options.html:96
 msgid "Passwords done't match, please re-enter."
 msgstr ""
 
-#: templates\options.html:122
+#: templates\options.html:135
 msgid "Edit Options"
 msgstr ""
 
-#: templates\options.html:157
+#: templates\options.html:165
+msgid "Default"
+msgstr ""
+
+#: templates\options.html:178
 msgid "None"
 msgstr ""
 
-#: templates\options.html:171
+#: templates\options.html:192
 msgid "System Reboot"
 msgstr ""
 
-#: templates\options.html:172
+#: templates\options.html:193
 msgid "Reboot"
 msgstr ""
 
-#: templates\options.html:180 templates\stations.html:175
+#: templates\options.html:201 templates\stations.html:182
 msgid "Submit Changes"
 msgstr ""
 
@@ -896,47 +960,47 @@ msgstr ""
 msgid " (Odd days only)"
 msgstr ""
 
-#: templates\programs.html:57
+#: templates\programs.html:61
 msgid "OpenSprinkler Pi Programs"
 msgstr ""
 
-#: templates\programs.html:158
+#: templates\programs.html:166
 msgid "Delete All"
 msgstr ""
 
-#: templates\programs.html:184
+#: templates\programs.html:192
 msgid "Starting"
 msgstr ""
 
-#: templates\programs.html:188
+#: templates\programs.html:196
 msgid "Recurring every"
 msgstr ""
 
-#: templates\programs.html:189
+#: templates\programs.html:197
 msgid "until"
 msgstr ""
 
-#: templates\programs.html:192 templates\runonce.html:128
+#: templates\programs.html:200 templates\runonce.html:136
 msgid "Run Now"
 msgstr ""
 
-#: templates\programs.html:193
+#: templates\programs.html:201
 msgid "Edit"
 msgstr ""
 
-#: templates\programs.html:194
+#: templates\programs.html:202
 msgid "Delete"
 msgstr ""
 
-#: templates\runonce.html:18
+#: templates\runonce.html:22
 msgid "OpenSprinkler Pi Run-Once"
 msgstr ""
 
-#: templates\runonce.html:62
+#: templates\runonce.html:71
 msgid "No station is scheduled to run"
 msgstr ""
 
-#: templates\runonce.html:129
+#: templates\runonce.html:137
 msgid "Reset Time"
 msgstr ""
 
@@ -944,35 +1008,35 @@ msgstr ""
 msgid "OpenSprinkler Pi Schedule"
 msgstr ""
 
-#: templates\schedule.html:236
+#: templates\schedule.html:235
 msgid "Today's Schedule"
 msgstr ""
 
-#: templates\stations.html:18
+#: templates\stations.html:21
 msgid "OpenSprinkler Pi Configure Stations"
 msgstr ""
 
-#: templates\stations.html:135
+#: templates\stations.html:142
 msgid "Name"
 msgstr ""
 
-#: templates\stations.html:136
+#: templates\stations.html:143
 msgid "Connected?"
 msgstr ""
 
-#: templates\stations.html:137
+#: templates\stations.html:144
 msgid "Ignore Rain?"
 msgstr ""
 
-#: templates\stations.html:139
+#: templates\stations.html:146
 msgid "Activate Master?"
 msgstr ""
 
-#: templates\stations.html:150
+#: templates\stations.html:157
 msgid "Master valve"
 msgstr ""
 
-#: templates\stations.html:176
+#: templates\stations.html:183
 msgid "Reset Names"
 msgstr ""
 
@@ -985,10 +1049,7 @@ msgid "Enable/Disable weather based adjustments"
 msgstr ""
 
 #: templates\weather_adj.html:29
-msgid ""
-"When weather-based rain delay is enabled, the weather will be checked for "
-"rain every hour. If the weather reports any condition suggesting rain, a "
-"rain delay is automatically issued using the below set delay duration."
+msgid "When weather-based rain delay is enabled, the weather will be checked for rain every hour. If the weather reports any condition suggesting rain, a rain delay is automatically issued using the below set delay duration."
 msgstr ""
 
 #: templates\weather_adj.html:33
@@ -1018,3 +1079,4 @@ msgstr ""
 #: templates\weather_adj.html:42
 msgid "Submit"
 msgstr ""
+

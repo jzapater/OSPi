@@ -10,9 +10,7 @@ $def with ()
 
 $code:
 	snames = eval(data('snames'))
-	
-$code:
-	days= json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
+	days = json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
 	months = json.dumps([_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')])
 	
 
@@ -42,8 +40,8 @@ $code:
 	<script>
 		// date/time formating helpers
 		var dayList = $:{days};
-    	var monthList = $:{months}
-    </script>
+    	var monthList = $:{months};
+	</script>
 	<script src="${gv.baseurl}/static/scripts/behaviors.js"></script>
 	<script>		
 		// Initialize behaviors
@@ -142,8 +140,8 @@ $code:
 							<tr>
 								<th class="stationNumber">$_('Station') </th>
 								<th class="stationName">$_('Name')</th>
-								<th class="stationShow"> $_('Connected? ') </th>
-								<th class="stationIgnore"> $_('Ignore Rain? ') </th>
+								<th class="stationShow"> $_('Connected?') </th>
+								<th class="stationIgnore"> $_('Ignore Rain?') </th>
 								$if gv.sd['mas'] > 0:
 									<th class="stationMaster"> $_('Activate Master?') </th>
 							</tr>
