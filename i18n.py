@@ -8,11 +8,15 @@ import json
 
 __author__ = 'Dan'
 
-with open('./data/sd.json', 'r') as sdf:
-    sd_temp = json.load(sdf)
+try:
+    with open('./data/sd.json', 'r') as sdf:
+        sd_temp = json.load(sdf)
+except:
+    pass
+       
 try:
     sd_lang = sd_temp['lang']
-except KeyError:
+except:
     sd_lang = 'default'
 
 languages = ({
