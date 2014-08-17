@@ -10,8 +10,10 @@ __author__ = 'Dan'
 
 with open('./data/sd.json', 'r') as sdf:
     sd_temp = json.load(sdf)
-
-sd_lang = sd_temp['lang']
+try:
+    sd_lang = sd_temp['lang']
+except KeyError:
+    sd_lang = 'default'
 
 languages = ({
     "en_US": "English",
@@ -44,7 +46,6 @@ if sd_lang == 'default':
         ui_lang = 'en_US'
 else:
     ui_lang = sd_lang
-    print "UI Language", ui_lang
 
 try:
     gettext.translation('ospi_messages', localedir, languages=[ui_lang]).install(True)

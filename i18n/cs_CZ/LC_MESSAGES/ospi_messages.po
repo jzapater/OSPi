@@ -975,7 +975,7 @@ msgid "System Reboot"
 msgstr "Restart systému"
 
 #: templates\options.html:172
-msgid "Reboot"
+msgid "Reboot system"
 msgstr "Restart"
 
 #: templates\options.html:180 templates\stations.html:175

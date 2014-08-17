@@ -190,7 +190,7 @@ $code:
 							output += "<span class='tooltip'>" + tooltip + "</span>\n"
 							output += "</div>\n\n"
 						output += categoryCloser + "<div class='category collapsible collapsed'><h4>"+_('System Reboot')+"</h4>"
-						output += "<div class='option' title=$:{json.dumps(_('Reboot system'), ensure_ascii=False)}><button id='cReboot' class='reboot danger'>"+_('Reboot')+"</button></div>\n"
+						output += "<div class='option' title="+json.dumps(_('Reboot system'), ensure_ascii=False)+"><button id='cReboot' class='reboot danger'>"+_('Reboot')+"</button></div>\n"
 						output += categoryCloser					
 					$:{output}
 						<input type="hidden" name="rbt" value="0">
