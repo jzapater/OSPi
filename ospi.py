@@ -891,7 +891,6 @@ class enable_program:
     def GET(self):
         verifyLogin()
         qdict = web.input()
-        print 'qdict', qdict
         gv.pd[int(qdict['pid'])][0] = int(qdict['enable'])
         jsave(gv.pd, 'programs')
         raise web.seeother('/vp')

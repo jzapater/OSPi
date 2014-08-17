@@ -186,9 +186,9 @@ $code:
 						<div id="p${pid}" class="controlBlock program ${'disabled' if prog[0] == 0 else ''}">
 							<p>
 								<button class="cDisable toggle ${'off' if prog[0] == 0 else 'on'}" data="${pid}">
-									<span class='toggleleft'>On</span>
+									<span class='toggleleft'>$_('On')</span>
 									<span class='togglesep'>&nbsp;</span>
-									<span class='toggleright'>Off</span>
+									<span class='toggleright'>$_('Off')</span>
 								</button>
 								Program ${pid+1}: <span class="val">${pdays(prog[1], prog[2])}</span></b>
 							</p>

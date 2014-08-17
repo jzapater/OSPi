@@ -41,6 +41,14 @@ msgid "Location"
 msgstr "Umístìní"
 
 #: gv.py:10
+msgid "Language"
+msgstr "Jazyk"
+
+#: gv.py:10
+msgid "Select language (effective after reboot.)"
+msgstr "Vybrat jazyk (Platné až po restartu.)"
+
+#: gv.py:10
 msgid "Example: GMT-4:00, GMT+5:30 (effective after reboot.)"
 msgstr "Pøíklad: GMT-4:00, GMT+5:30 (Platné až po restartu.)"
 
@@ -445,6 +453,7 @@ msgid "Suppressed by Rain Sensor"
 msgstr "Potlačeno senzorem deště"
 
 #: templates\home.html:131 templates\home.html:342 templates\modify.html:403
+#: templates\programs.html:191
 msgid "Off"
 msgstr "Vyp"
 
@@ -594,6 +603,7 @@ msgid "Off (Master)"
 msgstr "Vyp (hl. stanice)"
 
 #: templates\home.html:342 templates\modify.html:403
+#: templates\programs.html:189
 msgid "On"
 msgstr "Zap"
 
@@ -950,6 +960,11 @@ msgstr "Hesla se neshodují, zadejte znovu."
 #: templates\options.html:122
 msgid "Edit Options"
 msgstr "Úprava nastavení"
+
+
+#: templates\options.html:165
+msgid "Default"
+msgstr "Výchozí"
 
 #: templates\options.html:157
 msgid "None"

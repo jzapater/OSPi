@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-16 15:36+Pacific Daylight Time\n"
+"POT-Creation-Date: 2014-08-16 16:12+Pacific Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -228,31 +228,31 @@ msgstr ""
 msgid "Station"
 msgstr ""
 
-#: ospi.py:942
+#: ospi.py:950
 msgid "Python Interval Program for OpenSprinkler Pi"
 msgstr ""
 
-#: ospi.py:943
+#: ospi.py:951
 msgid "Compatable with OpenSprinkler firmware 1.8.3."
 msgstr ""
 
-#: ospi.py:944
+#: ospi.py:952
 msgid "Includes plugin archetecture"
 msgstr ""
 
-#: ospi.py:945
+#: ospi.py:953
 msgid "ospi.py revision"
 msgstr ""
 
-#: ospi.py:946
+#: ospi.py:954
 msgid "updated"
 msgstr ""
 
-#: ospi.py:1052
+#: ospi.py:1060
 msgid "Date, Start Time, Zone, Duration, Program"
 msgstr ""
 
-#: ospi.py:1063
+#: ospi.py:1071
 msgid "plugins loaded:"
 msgstr ""
 
@@ -401,7 +401,7 @@ msgstr ""
 msgid "ran"
 msgstr ""
 
-#: templates\home.html:99 templates\home.html:348 templates\programs.html:193
+#: templates\home.html:99 templates\home.html:348 templates\programs.html:213
 msgid "for"
 msgstr ""
 
@@ -422,6 +422,7 @@ msgid "Suppressed by Rain Sensor"
 msgstr ""
 
 #: templates\home.html:136 templates\home.html:347 templates\modify.html:410
+#: templates\programs.html:191
 msgid "Off"
 msgstr ""
 
@@ -438,35 +439,35 @@ msgid "Timer values wrong"
 msgstr ""
 
 #: templates\home.html:297 templates\log.html:91 templates\modify.html:330
-#: templates\options.html:124 templates\programs.html:144
+#: templates\options.html:124 templates\programs.html:154
 #: templates\runonce.html:104 templates\schedule.html:225
 #: templates\stations.html:126
 msgid "Home"
 msgstr ""
 
 #: templates\home.html:298 templates\log.html:92 templates\modify.html:331
-#: templates\options.html:125 templates\programs.html:145
+#: templates\options.html:125 templates\programs.html:155
 #: templates\runonce.html:105 templates\schedule.html:226
 #: templates\stations.html:127
 msgid "Define Programs"
 msgstr ""
 
 #: templates\home.html:298 templates\log.html:92 templates\modify.html:331
-#: templates\options.html:125 templates\programs.html:145
+#: templates\options.html:125 templates\programs.html:155
 #: templates\runonce.html:105 templates\schedule.html:226
 #: templates\stations.html:127
 msgid "Programs"
 msgstr ""
 
 #: templates\home.html:299 templates\log.html:93 templates\modify.html:332
-#: templates\options.html:126 templates\programs.html:146
+#: templates\options.html:126 templates\programs.html:156
 #: templates\runonce.html:106 templates\schedule.html:227
 #: templates\stations.html:128
 msgid "Define Run Once Program"
 msgstr ""
 
 #: templates\home.html:299 templates\log.html:93 templates\modify.html:332
-#: templates\options.html:126 templates\programs.html:146
+#: templates\options.html:126 templates\programs.html:156
 #: templates\runonce.html:106 templates\schedule.html:227
 #: templates\stations.html:128
 msgid "Run Once"
@@ -482,41 +483,41 @@ msgstr ""
 
 #: templates\home.html:301 templates\log.html:94 templates\log.html:102
 #: templates\modify.html:333 templates\options.html:127
-#: templates\programs.html:147 templates\runonce.html:107
+#: templates\programs.html:157 templates\runonce.html:107
 #: templates\schedule.html:228 templates\stations.html:129
 msgid "Log"
 msgstr ""
 
 #: templates\home.html:301 templates\log.html:94 templates\modify.html:333
-#: templates\options.html:127 templates\programs.html:147
+#: templates\options.html:127 templates\programs.html:157
 #: templates\runonce.html:107 templates\schedule.html:228
 #: templates\stations.html:129
 msgid "View Log"
 msgstr ""
 
 #: templates\home.html:302 templates\log.html:95 templates\modify.html:334
-#: templates\options.html:128 templates\programs.html:148
+#: templates\options.html:128 templates\programs.html:158
 #: templates\runonce.html:108 templates\schedule.html:229
 #: templates\stations.html:130
 msgid "Options"
 msgstr ""
 
 #: templates\home.html:303 templates\log.html:96 templates\modify.html:335
-#: templates\options.html:129 templates\programs.html:149
+#: templates\options.html:129 templates\programs.html:159
 #: templates\runonce.html:109 templates\schedule.html:230
 #: templates\stations.html:131
 msgid "Stations"
 msgstr ""
 
 #: templates\home.html:303 templates\log.html:96 templates\modify.html:335
-#: templates\options.html:129 templates\programs.html:149
+#: templates\options.html:129 templates\programs.html:159
 #: templates\runonce.html:109 templates\schedule.html:230
 #: templates\stations.html:131 templates\stations.html:137
 msgid "Configure Stations"
 msgstr ""
 
 #: templates\home.html:305 templates\log.html:98 templates\modify.html:337
-#: templates\options.html:131 templates\programs.html:151
+#: templates\options.html:131 templates\programs.html:161
 #: templates\runonce.html:111 templates\schedule.html:232
 #: templates\stations.html:133
 msgid "Logout"
@@ -567,6 +568,7 @@ msgid "Off (Master)"
 msgstr ""
 
 #: templates\home.html:347 templates\modify.html:410
+#: templates\programs.html:189
 msgid "On"
 msgstr ""
 
@@ -595,21 +597,21 @@ msgid "Stop All Stations"
 msgstr ""
 
 #: templates\home.html:458 templates\modify.html:468
-#: templates\programs.html:211 templates\runonce.html:144
+#: templates\programs.html:231 templates\runonce.html:144
 #: templates\schedule.html:243 templates\stations.html:190
 msgid "CPU Temp:"
 msgstr ""
 
 #: templates\home.html:459 templates\log.html:143 templates\login.html:54
 #: templates\modify.html:469 templates\options.html:209
-#: templates\programs.html:212 templates\runonce.html:145
+#: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "Software"
 msgstr ""
 
 #: templates\home.html:459 templates\log.html:143 templates\login.html:54
 #: templates\modify.html:469 templates\options.html:209
-#: templates\programs.html:212 templates\runonce.html:145
+#: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "version"
 msgstr ""
@@ -698,7 +700,7 @@ msgstr ""
 msgid "Edit Program #"
 msgstr ""
 
-#: templates\modify.html:341 templates\programs.html:165
+#: templates\modify.html:341 templates\programs.html:179
 msgid "Add a New Program"
 msgstr ""
 
@@ -964,31 +966,31 @@ msgstr ""
 msgid "OpenSprinkler Pi Programs"
 msgstr ""
 
-#: templates\programs.html:166
+#: templates\programs.html:180
 msgid "Delete All"
 msgstr ""
 
-#: templates\programs.html:192
+#: templates\programs.html:212
 msgid "Starting"
 msgstr ""
 
-#: templates\programs.html:196
+#: templates\programs.html:216
 msgid "Recurring every"
 msgstr ""
 
-#: templates\programs.html:197
+#: templates\programs.html:217
 msgid "until"
 msgstr ""
 
-#: templates\programs.html:200 templates\runonce.html:136
+#: templates\programs.html:220 templates\runonce.html:136
 msgid "Run Now"
 msgstr ""
 
-#: templates\programs.html:201
+#: templates\programs.html:221
 msgid "Edit"
 msgstr ""
 
-#: templates\programs.html:202
+#: templates\programs.html:222
 msgid "Delete"
 msgstr ""
 
