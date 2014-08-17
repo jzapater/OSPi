@@ -14,17 +14,18 @@ with open('./data/sd.json', 'r') as sdf:
 sd_lang = sd_temp['lang']
 
 languages = ({
-              "en_US":"English",
-              "cs":"Czech",
-              })
+    "en_US": "English",
+    "cs_CZ": "Czech",
+})
+
 
 def get_system_lang():
- """Return default system locale language"""
- lc, encoding = locale.getdefaultlocale()
- if lc:
-	 return lc
- else:
-	 return None
+    """Return default system locale language"""
+    lc, encoding = locale.getdefaultlocale()
+    if lc:
+        return lc
+    else:
+        return None
 
 # File location directory.
 curdir = os.path.abspath(os.path.dirname(__file__))
@@ -37,12 +38,13 @@ gettext.install('ospi_messages', localedir, unicode=True)
 sys_lang = get_system_lang()
 
 if sd_lang == 'default':
-    if languages.has_key(sys_lang):
+    if sys_lang in languages:
         ui_lang = sys_lang
     else:
         ui_lang = 'en_US'
 else:
     ui_lang = sd_lang
+    print "UI Language", ui_lang
 
 try:
     gettext.translation('ospi_messages', localedir, languages=[ui_lang]).install(True)
