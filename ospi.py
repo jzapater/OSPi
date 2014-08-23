@@ -946,11 +946,11 @@ class show_revision:
     def GET(self):
         checkLogin()
         revpg = '<!DOCTYPE html>\n'
-        revpg += _('Python Interval Program for OpenSprinkler Pi') + '<br/><br/>\n'
-        revpg += _('Compatable with OpenSprinkler firmware 1.8.3.') + '<br/><br/>\n'
-        revpg += _('Includes plugin archetecture') + '\n'
-        revpg += _('ospi.py revision') + ': '+str(gv.rev) +'<br/><br/>\n'
-        revpg += _('updated') + ' ' + gv.rev_date +'\n'
+        revpg += 'Python Interval Program for OpenSprinkler Pi' + '<br/><br/>\n'
+        revpg += 'Compatable with OpenSprinkler firmware 1.8.3.' + '<br/><br/>\n'
+        revpg += 'Includes plugin archetecture' + '\n'
+        revpg += 'ospi.py revision' + ': '+ str(gv.rev) +'<br/><br/>\n'
+        revpg += 'updated' + ' ' + gv.rev_date +'\n'
         return revpg
 
 class toggle_temp:

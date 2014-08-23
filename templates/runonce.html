@@ -58,7 +58,7 @@ $code:
 					mm = (strmm=="" || strmm==undefined ? 0 : parseInt(strmm));
 					ss = (strss=="" || strss==undefined ? 0 : parseInt(strss));
 					if (!(mm >= 0 && ss >= 0 && ss < 60)) {
-						alert($:{json.dumps(_('Timer values wrong'), ensure_ascii=False)} + "": " + strmm + ":" + strss);
+						alert($:{json.dumps(_('Timer values wrong'), ensure_ascii=False)} + ": " + strmm + ":" + strss);
 						return;
 					}
 			    	if (mm*60+ss > 0) {
