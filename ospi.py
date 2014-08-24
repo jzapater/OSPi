@@ -483,7 +483,7 @@ def verifyLogin():
     raise web.unauthorized()
 
 signin_form = form.Form(form.Password('password',
-                                      description='Password:'),
+                                      description=_('Password')+':'),
                         validators = [form.Validator(_("Incorrect password, please try again"),
                                       lambda x: checkPassword(x.password, gv.sd['salt'], gv.sd['password'])) ])
 

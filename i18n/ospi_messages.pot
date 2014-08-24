@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-16 16:12+Pacific Daylight Time\n"
+"POT-Creation-Date: 2014-08-23 17:29+Pacific Daylight Time\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -215,6 +215,10 @@ msgstr ""
 msgid "Starting timing loop"
 msgstr ""
 
+#: ospi.py:486
+msgid "Password"
+msgstr ""
+
 #: ospi.py:487
 msgid "Incorrect password, please try again"
 msgstr ""
@@ -228,152 +232,144 @@ msgstr ""
 msgid "Station"
 msgstr ""
 
-#: ospi.py:950
-msgid "Python Interval Program for OpenSprinkler Pi"
-msgstr ""
-
-#: ospi.py:951
-msgid "Compatable with OpenSprinkler firmware 1.8.3."
-msgstr ""
-
-#: ospi.py:952
-msgid "Includes plugin archetecture"
-msgstr ""
-
-#: ospi.py:953
-msgid "ospi.py revision"
-msgstr ""
-
-#: ospi.py:954
-msgid "updated"
-msgstr ""
-
-#: ospi.py:1060
+#: ospi.py:1059
 msgid "Date, Start Time, Zone, Duration, Program"
 msgstr ""
 
-#: ospi.py:1071
+#: ospi.py:1070
 msgid "plugins loaded:"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:391 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:391
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Monday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:392 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:392
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Tuesday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:393 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:393
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Wednesday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:394 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:394
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Thursday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:395 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:395
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Friday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:396 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:396
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Saturday"
 msgstr ""
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:397 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:397
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Sunday"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "April"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "August"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "December"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "February"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "January"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "July"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "June"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "March"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "May"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "November"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "October"
 msgstr ""
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "September"
 msgstr ""
 
@@ -602,18 +598,26 @@ msgstr ""
 msgid "CPU Temp:"
 msgstr ""
 
-#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\home.html:459 templates\log.html:143 templates\login.html:63
 #: templates\modify.html:469 templates\options.html:209
 #: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "Software"
 msgstr ""
 
-#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\home.html:459 templates\log.html:143 templates\login.html:63
 #: templates\modify.html:469 templates\options.html:209
 #: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "version"
+msgstr ""
+
+#: templates\log.html:6
+msgid "Enabled"
+msgstr ""
+
+#: templates\log.html:9
+msgid "Disabled"
 msgstr ""
 
 #: templates\log.html:37
@@ -640,7 +644,7 @@ msgstr ""
 msgid "Start Time"
 msgstr ""
 
-#: templates\log.html:115
+#: templates\log.html:115 templates\modify.html:360
 msgid "Duration"
 msgstr ""
 
@@ -660,11 +664,11 @@ msgstr ""
 msgid "CPU Temp"
 msgstr ""
 
-#: templates\login.html:11
+#: templates\login.html:15
 msgid "OpenSprinkler Pi Login"
 msgstr ""
 
-#: templates\login.html:44 templates\login.html:48
+#: templates\login.html:53 templates\login.html:57
 msgid "Login"
 msgstr ""
 
@@ -718,6 +722,10 @@ msgstr ""
 
 #: templates\modify.html:362
 msgid "Single pass"
+msgstr ""
+
+#: templates\modify.html:364 templates\programs.html:24
+msgid "Every"
 msgstr ""
 
 #: templates\modify.html:368
@@ -842,30 +850,6 @@ msgstr ""
 msgid "Submit Values"
 msgstr ""
 
-#: templates\monthly.html:80
-msgid "Note: In order for this plugin to actually work, The"
-msgstr ""
-
-#: templates\monthly.html:80
-msgid "Python module must be installed."
-msgstr ""
-
-#: templates\monthly.html:80
-msgid "apscheduler"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "Visit the"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "Wiki"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "for instructions."
-msgstr ""
-
 #: templates\options.html:27
 msgid "OpenSprinkler Pi Options"
 msgstr ""
@@ -910,12 +894,12 @@ msgstr ""
 msgid "Reboot"
 msgstr ""
 
-#: templates\options.html:201 templates\stations.html:182
-msgid "Submit Changes"
+#: templates\options.html:193
+msgid "Reboot system"
 msgstr ""
 
-#: templates\programs.html:24
-msgid "Every"
+#: templates\options.html:201 templates\stations.html:182
+msgid "Submit Changes"
 msgstr ""
 
 #: templates\programs.html:24 templates\programs.html:26
@@ -970,12 +954,28 @@ msgstr ""
 msgid "Delete All"
 msgstr ""
 
+#: templates\programs.html:199
+msgid "Run"
+msgstr ""
+
 #: templates\programs.html:212
 msgid "Starting"
 msgstr ""
 
+#: templates\programs.html:213
+msgid "secs"
+msgstr ""
+
+#: templates\programs.html:213 templates\programs.html:216
+msgid "mins"
+msgstr ""
+
 #: templates\programs.html:216
 msgid "Recurring every"
+msgstr ""
+
+#: templates\programs.html:216
+msgid "hrs"
 msgstr ""
 
 #: templates\programs.html:217

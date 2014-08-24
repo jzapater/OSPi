@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OSPi 2.0.3\n"
-"POT-Creation-Date: 2014-08-16 16:12+Pacific Daylight Time\n"
-"PO-Revision-Date: 2014-08-22 13:36-0800\n"
+"POT-Creation-Date: 2014-08-23 17:10+Pacific Daylight Time\n"
+"PO-Revision-Date: 2014-08-23 17:13-0800\n"
 "Last-Translator: Dan <dkimberling59@gmail.com>\n"
 "Language-Team: Czech <LL@li.org>\n"
+"Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 1.6.8\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"Language: cs_CZ\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: gpio_pins.py:12
@@ -222,6 +222,10 @@ msgstr "Manuál"
 msgid "Starting timing loop"
 msgstr "Startuji časovou smyčku"
 
+#: ospi.py:486
+msgid "Password"
+msgstr "Heslo"
+
 #: ospi.py:487
 msgid "Incorrect password, please try again"
 msgstr "Špatné heslo, zkuste to prosím znovu"
@@ -235,152 +239,144 @@ msgstr "nenalezeno."
 msgid "Station"
 msgstr "Stanice"
 
-#: ospi.py:950
-msgid "Python Interval Program for OpenSprinkler Pi"
-msgstr "Python interval program OpenSprinkler Pi"
-
-#: ospi.py:951
-msgid "Compatable with OpenSprinkler firmware 1.8.3."
-msgstr ""
-
-#: ospi.py:952
-msgid "Includes plugin archetecture"
-msgstr ""
-
-#: ospi.py:953
-msgid "ospi.py revision"
-msgstr ""
-
-#: ospi.py:954
-msgid "updated"
-msgstr ""
-
-#: ospi.py:1060
+#: ospi.py:1059
 msgid "Date, Start Time, Zone, Duration, Program"
 msgstr "Datum, Čas startu, Oblast, Trvání, Program"
 
-#: ospi.py:1071
+#: ospi.py:1070
 msgid "plugins loaded:"
 msgstr "nahrané pluginy:"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:391 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:391
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Monday"
 msgstr "Pondělí"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:392 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:392
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Tuesday"
 msgstr "Úterý"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:393 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:393
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Wednesday"
 msgstr "Středa"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:394 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:394
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:395 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:395
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Friday"
 msgstr "Pátek"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:396 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:396
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Saturday"
 msgstr "Sobota"
 
-#: templates\home.html:18 templates\log.html:25 templates\modify.html:52
-#: templates\modify.html:397 templates\options.html:19
-#: templates\programs.html:53 templates\runonce.html:15
-#: templates\stations.html:13
+#: templates\home.html:18 templates\log.html:25 templates\login.html:4
+#: templates\modify.html:52 templates\modify.html:397
+#: templates\options.html:19 templates\programs.html:53
+#: templates\runonce.html:15 templates\stations.html:13
 msgid "Sunday"
 msgstr "Neděle"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "April"
 msgstr "Duben"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "August"
 msgstr "Srpen"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "December"
 msgstr "Prosinec"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "February"
 msgstr "Únor"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "January"
 msgstr "Leden"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "July"
 msgstr "Červenec"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "June"
 msgstr "Červen"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "March"
 msgstr "Březen"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "May"
 msgstr "Březen"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "November"
 msgstr "Listopad"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "October"
 msgstr "Říjen"
 
-#: templates\home.html:19 templates\log.html:26 templates\modify.html:53
-#: templates\options.html:20 templates\programs.html:54
-#: templates\runonce.html:16 templates\stations.html:14
+#: templates\home.html:19 templates\log.html:26 templates\login.html:5
+#: templates\modify.html:53 templates\options.html:20
+#: templates\programs.html:54 templates\runonce.html:16
+#: templates\stations.html:14
 msgid "September"
 msgstr "Září"
 
@@ -410,7 +406,7 @@ msgstr "běžel"
 
 #: templates\home.html:99 templates\home.html:348 templates\programs.html:213
 msgid "for"
-msgstr "vyvolal"
+msgstr "poběží"
 
 #: templates\home.html:123
 msgid "Master On"
@@ -609,19 +605,27 @@ msgstr "Zastavit všechny stanice"
 msgid "CPU Temp:"
 msgstr "Teplota CPU"
 
-#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\home.html:459 templates\log.html:143 templates\login.html:63
 #: templates\modify.html:469 templates\options.html:209
 #: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "Software"
 msgstr "Program"
 
-#: templates\home.html:459 templates\log.html:143 templates\login.html:54
+#: templates\home.html:459 templates\log.html:143 templates\login.html:63
 #: templates\modify.html:469 templates\options.html:209
 #: templates\programs.html:232 templates\runonce.html:145
 #: templates\schedule.html:244 templates\stations.html:191
 msgid "version"
 msgstr "verze:"
+
+#: templates\log.html:6
+msgid "Enabled"
+msgstr "Povolen"
+
+#: templates\log.html:9
+msgid "Disabled"
+msgstr "Disabled"
 
 #: templates\log.html:37
 msgid "OpenSprinkler Pi Log"
@@ -647,7 +651,7 @@ msgstr "Datum"
 msgid "Start Time"
 msgstr "Čas startu"
 
-#: templates\log.html:115
+#: templates\log.html:115 templates\modify.html:360
 msgid "Duration"
 msgstr "Doba běhu"
 
@@ -667,11 +671,11 @@ msgstr "Smazat záznamy"
 msgid "CPU Temp"
 msgstr "Teplota CPU"
 
-#: templates\login.html:11
+#: templates\login.html:15
 msgid "OpenSprinkler Pi Login"
 msgstr "OpenSprinkler Pi Přihlášení"
 
-#: templates\login.html:44 templates\login.html:48
+#: templates\login.html:53 templates\login.html:57
 msgid "Login"
 msgstr "Přihlášení"
 
@@ -726,6 +730,10 @@ msgstr "Opakující se``"
 #: templates\modify.html:362
 msgid "Single pass"
 msgstr "Jedno spuštění"
+
+#: templates\modify.html:364 templates\programs.html:24
+msgid "Every"
+msgstr "Každý"
 
 #: templates\modify.html:368
 msgid "Until"
@@ -849,30 +857,6 @@ msgstr "Prosinec"
 msgid "Submit Values"
 msgstr "Odeslat"
 
-#: templates\monthly.html:80
-msgid "Note: In order for this plugin to actually work, The"
-msgstr ""
-
-#: templates\monthly.html:80
-msgid "Python module must be installed."
-msgstr ""
-
-#: templates\monthly.html:80
-msgid "apscheduler"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "Visit the"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "Wiki"
-msgstr ""
-
-#: templates\monthly.html:81
-msgid "for instructions."
-msgstr ""
-
 #: templates\options.html:27
 msgid "OpenSprinkler Pi Options"
 msgstr "OpenSprinkler Pi Nastavení"
@@ -917,13 +901,13 @@ msgstr "Restart systému"
 msgid "Reboot"
 msgstr "Restart"
 
+#: templates\options.html:193
+msgid "Reboot system"
+msgstr "Reboot systém"
+
 #: templates\options.html:201 templates\stations.html:182
 msgid "Submit Changes"
 msgstr "Odeslat změny"
-
-#: templates\programs.html:24
-msgid "Every"
-msgstr "Každý"
 
 #: templates\programs.html:24 templates\programs.html:26
 msgid "days"
@@ -977,13 +961,29 @@ msgstr "OpenSprinkler Pi Programy"
 msgid "Delete All"
 msgstr "Smazat vše"
 
+#: templates\programs.html:199
+msgid "Run"
+msgstr "Stanice ke spuštění"
+
 #: templates\programs.html:212
 msgid "Starting"
-msgstr "Start:"
+msgstr "Začátek"
+
+#: templates\programs.html:213
+msgid "secs"
+msgstr "sekund"
+
+#: templates\programs.html:213 templates\programs.html:216
+msgid "mins"
+msgstr "minut"
 
 #: templates\programs.html:216
 msgid "Recurring every"
 msgstr "Opakující se"
+
+#: templates\programs.html:216
+msgid "hrs"
+msgstr "hodin"
 
 #: templates\programs.html:217
 msgid "until"
@@ -1094,3 +1094,6 @@ msgstr "Wunderground API klíč:"
 #: templates\weather_adj.html:42
 msgid "Submit"
 msgstr "Odeslat"
+
+#~ msgid "Python Interval Program for OpenSprinkler Pi"
+#~ msgstr "Python interval program OpenSprinkler Pi"

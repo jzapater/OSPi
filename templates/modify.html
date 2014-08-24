@@ -357,11 +357,11 @@ $code:
 										<option ${"selected" if t.find("pm")>=0 else ""}>PM</option>
 									</select>
 								</p>
-								<p><b>Duration:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="3" id="tdm" value="${twoDigits(program[6]/60)}"> : 
+								<p><b>$_('Duration'):</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="3" id="tdm" value="${twoDigits(program[6]/60)}"> : 
 								<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tds" value="${twoDigits(program[6]%60)}"> (mm:ss)</p>
 								<p><button id="cRecurring" class="toggle choice ${'off' if recurring else 'on'}"><span class='toggleleft'>$_('Single pass')</span><span class='togglesep'>&nbsp;</span><span class='toggleright'>$_('Recurring')</span></button></p>
 								<div id="recurr" $:{"" if recurring else "style='display:none'"}>
-									<p><b>Every:</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tih" value="${twoDigits(program[5]/60)}"> : 
+									<p><b>$_('Every'):</b> <input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tih" value="${twoDigits(program[5]/60)}"> : 
 									<input class="timeInput numbersOnly" type="text" size="2" maxlength="2" id="tim" value="${twoDigits(program[5]%60)}"> (hh:mm)</p>
 									<p>
 									$ t = formatTime(twoDigits(program[4]/60) + ":" + twoDigits(program[4]%60))

@@ -1,5 +1,9 @@
 $def with (form)
 
+$code:
+	days= json.dumps([_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')])
+	months = json.dumps([_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')])
+
 <!doctype html>
 
 <html>
@@ -23,6 +27,11 @@ $def with (form)
 		jQuery(document).ready(function(){
 			jQuery("#password").focus();
 		});
+	</script>
+	<script>
+		// date/time formating helpers
+		var dayList = $:{days};
+    	var monthList = $:{months}
 	</script>
 	<script src="${gv.baseurl}/static/scripts/behaviors.js"></script>
 </head>

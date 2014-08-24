@@ -3,10 +3,10 @@ $def with (records)
 $code:
 	snames = eval(data('snames'))
 	if gv.sd['lg'] == 1:
-		log_state = "Enabled"
+		log_state = _("Enabled")
 		log_option = "checked"
 	else:
-		log_state = "Disabled"
+		log_state = _("Disabled")
 		log_option = ""
 		
 	def formatTime(t):
