@@ -1,5 +1,5 @@
 #!/usr/bin/env python\
-# encoding: utf-8
+# -*- coding: utf-8 -*-
 
 import i18n
 import os
@@ -101,16 +101,17 @@ def log_run():
     """add run data to csv file - most recent first."""
     if gv.sd['lg']:
         if gv.lrun[1] == 98:
-            pgr = _('Run-once')
+            pgr = 'Run-once'
         elif gv.lrun[1] == 99:
             pgr = _('Manual')
         else:
             pgr = str(gv.lrun[1])
-
+        print 'pgr: ', pgr
         start = time.gmtime(gv.now - gv.lrun[2])
-        logline = '{"program":"' + pgr + '","station":' + str(gv.lrun[0]) + ',"duration":"' + timestr(gv.lrun[2]) + '","start":"' + time.strftime('%H:%M:%S","date":"%Y-%m-%d"', start) + '}\n'
+        logline = '{"' + _('program') + '":"' + pgr + '","' + _('station') + '":' + str(gv.lrun[0]) + ',"' + _('duration') + '":"' + timestr(gv.lrun[2]) + '","' + _('start') + '":"' + time.strftime('%H:%M:%S","'+ _('date') + '":"%Y-%m-%d"', start) + '}\n'
         log = read_log()
         log.insert(0, logline)
+        print 'log: ', log       
         f = open('./data/log.json', 'w')
         if gv.sd['lr']:
             f.writelines(log[:gv.sd['lr']])
@@ -351,6 +352,13 @@ def save(dataf, datastr):
     f.write(datastr)
     f.close()
     return
+
+
+def station_names():
+    with open('./data/snames.json', 'r') as snf:
+        stations = json.load(snf)
+        return stations
+        
 
 def read_log():
     try:

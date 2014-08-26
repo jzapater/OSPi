@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: OSPi 2.0.3\n"
-"POT-Creation-Date: 2014-08-23 17:10+Pacific Daylight Time\n"
-"PO-Revision-Date: 2014-08-23 17:13-0800\n"
+"POT-Creation-Date: 2014-08-23 17:29+Pacific Daylight Time\n"
+"PO-Revision-Date: 2014-08-25 07:51-0800\n"
 "Last-Translator: Dan <dkimberling59@gmail.com>\n"
 "Language-Team: Czech <LL@li.org>\n"
 "Language: cs_CZ\n"
@@ -725,7 +725,7 @@ msgstr "Program zap"
 
 #: templates\modify.html:362
 msgid "Recurring"
-msgstr "Opakující se``"
+msgstr "Opakující se`"
 
 #: templates\modify.html:362
 msgid "Single pass"
@@ -737,7 +737,7 @@ msgstr "Každý"
 
 #: templates\modify.html:368
 msgid "Until"
-msgstr "Do:"
+msgstr "Do"
 
 #: templates\modify.html:380
 msgid "Interval"
