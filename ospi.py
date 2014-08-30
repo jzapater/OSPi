@@ -1071,7 +1071,7 @@ class water_log:
 ################################
 #### Code to import plugins ####
 import plugins
-print _('plugins loaded:')
+print 'plugins loaded:'
 print plugins.__all__
 for name in plugins.__all__:
     plugin = getattr(plugins, name)

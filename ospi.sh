@@ -29,7 +29,7 @@
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
-DESC="OpenSprinkler Raspberry Pi"
+DESC="OpenSprinkler Pi"
 NAME=ospi.py
 DAEMON=/usr/bin/python
 DAEMON_ARGS="ospi.py"
