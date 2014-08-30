@@ -108,10 +108,9 @@ def log_run():
             pgr = str(gv.lrun[1])
         print 'pgr: ', pgr
         start = time.gmtime(gv.now - gv.lrun[2])
-        logline = '{"' + _('program') + '":"' + pgr + '","' + _('station') + '":' + str(gv.lrun[0]) + ',"' + _('duration') + '":"' + timestr(gv.lrun[2]) + '","' + _('start') + '":"' + time.strftime('%H:%M:%S","'+ _('date') + '":"%Y-%m-%d"', start) + '}\n'
+        logline = dict({"program":pgr, "station":str(gv.lrun[0]), "duration":timestr(gv.lrun[2]), "start":time.strftime("%H:%M:%S"), "date":time.strftime("%Y-%m-%d", start)})
         log = read_log()
         log.insert(0, logline)
-        print 'log: ', log       
         f = open('./data/log.json', 'w')
         if gv.sd['lr']:
             f.writelines(log[:gv.sd['lr']])
