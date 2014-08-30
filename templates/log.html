@@ -117,11 +117,11 @@ $code:
 						</tr>
 						$ odd = 1
 						$for r in records:
-							$ event = json.loads(r)
+							$ event = r
 							<tr class="log_rec ${'odd' if odd else 'even'}">
 								<td align='center'>${event["date"]}</td>
 								<td align='center'>${formatTime(event["start"])}</td>
-								<td align='center'>${snames[event["station"]]}</td>
+								<td align='center'>${snames[int(event["station"])]}</td>
 								<td align='center'>${event["duration"]}</td>
 								<td align='center'>${event["program"]}</td>
 							</tr>

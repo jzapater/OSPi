@@ -101,22 +101,20 @@ def log_run():
     """add run data to csv file - most recent first."""
     if gv.sd['lg']:
         if gv.lrun[1] == 98:
-            pgr = 'Run-once'
+            pgr = _('Run-once')
         elif gv.lrun[1] == 99:
             pgr = _('Manual')
         else:
             pgr = str(gv.lrun[1])
-        print 'pgr: ', pgr
         start = time.gmtime(gv.now - gv.lrun[2])
         logline = dict({"program":pgr, "station":str(gv.lrun[0]), "duration":timestr(gv.lrun[2]), "start":time.strftime("%H:%M:%S"), "date":time.strftime("%Y-%m-%d", start)})
         log = read_log()
         log.insert(0, logline)
-        f = open('./data/log.json', 'w')
-        if gv.sd['lr']:
-            f.writelines(log[:gv.sd['lr']])
-        else:
-            f.writelines(log)
-        f.close()
+        with open('./data/log.json', 'w') as logfile:
+            if gv.sd['lr']:
+                json.dump(log[:gv.sd['lr']], logfile)
+            else:
+                json.dump(log, logfile)
     return
 
 def prog_match(prog):
@@ -1042,7 +1040,7 @@ class api_log:
 
         try:
             for r in records:
-                event = json.loads(r)
+                event = r
     
                 # return any records starting on this date
                 if not(qdict.has_key('date')) or event['date'] == thedate:
@@ -1064,9 +1062,9 @@ class water_log:
         records = read_log()
         data = _("Date, Start Time, Zone, Duration, Program") + "\n"
         for r in records:
-            event = json.loads(r)
+            # event = json.loads(r)
+            event = r
             data += event["date"] + ", " + event["start"] + ", " + str(event["station"]) + ", " + event["duration"] + ", " + event["program"] + "\n"
-
         web.header('Content-Type', 'text/csv')
         return data
 
