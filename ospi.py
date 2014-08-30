@@ -360,11 +360,10 @@ def station_names():
         
 
 def read_log():
+    """Read log data from disk."""
     try:
-        logf = open('./data/log.json')
-        records = logf.readlines()
-        logf.close()
-        return records
+        with open('./data/log.json') as logf:
+            return json.load(logf)
     except IOError:
         return []
 
