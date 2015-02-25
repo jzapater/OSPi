@@ -251,7 +251,7 @@ msgstr "Contraseña incorrecta, intenta de nuevo"
 
 #: OSPi\ospi.py:22
 msgid "Starting timing loop"
-msgstr "Comenzando un buque de tiempo"
+msgstr "Comenzando un bucle de tiempo"
 
 #: OSPi\ospi.py:180
 msgid "plugins loaded:"
@@ -838,7 +838,7 @@ msgstr "Reiniciar Sistema"
 
 #: OSPi\templates\options.html:124
 msgid "Restart"
-msgstr "Reiniciar"
+msgstr "Reanudar"
 
 #: OSPi\templates\options.html:124
 msgid "Restart software"
