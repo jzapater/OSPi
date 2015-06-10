@@ -1,22 +1,25 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import i18n
-
 import json
 import ast
 import time
 import thread
 from calendar import timegm
 import sys
+
+import i18n
 sys.path.append('./plugins')
 
 import web  # the Web.py module. See webpy.org (Enables the Python OpenSprinkler web interface)
 import gv
 
-from helpers import plugin_adjustment, prog_match, schedule_stations, log_run, stop_onrain, check_rain, jsave, station_names
+
+from helpers import plugin_adjustment, prog_match, schedule_stations, log_run, stop_onrain, check_rain, jsave
 from urls import urls  # Provides access to URLs for UI pages
 from gpio_pins import set_output
+from ReverseProxied import ReverseProxied
+set_output()
 
 
 def timing_loop():
@@ -154,6 +157,7 @@ class OSPiApp(web.application):
 
     def run(self, port=gv.sd['htp'], *middleware):  # get port number from options settings
         func = self.wsgifunc(*middleware)
+        func = ReverseProxied(func)
         return web.httpserver.runsimple(func, ('0.0.0.0', port))
 
 
@@ -171,7 +175,9 @@ template_globals = {
     'json': json,
     'ast': ast,
     '_': _,
-    'i18n': i18n
+    'i18n': i18n,
+    'app_path': lambda p: web.ctx.homepath + p,
+    'web' : web,
 }
 
 template_render = web.template.render('templates', globals=template_globals, base='base')
@@ -196,6 +202,9 @@ if __name__ == '__main__':
         gv.plugin_menu.pop(gv.plugin_menu.index(['Manage Plugins', '/plugins']))
     except Exception:
         pass
+
+    if gv.use_gpio_pins:
+        set_output()    
 
     thread.start_new_thread(timing_loop, ())
 
